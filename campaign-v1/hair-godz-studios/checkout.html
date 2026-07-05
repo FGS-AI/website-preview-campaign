@@ -45,17 +45,17 @@
         </div>
         <div class="actions">
           <span class="disabled">Payment Link Not Connected Yet</span>
-          <form method="post" action="https://loud-donkeys-show.loca.lt/api/launch-interest" style="display:inline">
+          <form method="post" action="https://fgs-ai.github.io/website-preview-campaign/api/launch-interest" style="display:inline">
             <input type="hidden" name="prospect_slug" value="hair-godz-studios">
             <input type="hidden" name="business" value="Hair Godz Studios">
             <input type="hidden" name="preview_url" value="https://fgs-ai.github.io/website-preview-campaign/campaign-v1/hair-godz-studios/">
             <button class="primary" type="submit">Test: Capture Launch Interest</button>
           </form>
-          <form method="post" action="https://loud-donkeys-show.loca.lt/api/checkout-test" style="display:inline"><input type="hidden" name="prospect_slug" value="hair-godz-studios"><input type="hidden" name="business" value="Hair Godz Studios"><button class="secondary" type="submit">Internal Test: Continue To Intake</button></form>
+          <form method="post" action="https://fgs-ai.github.io/website-preview-campaign/api/checkout-test" style="display:inline"><input type="hidden" name="prospect_slug" value="hair-godz-studios"><input type="hidden" name="business" value="Hair Godz Studios"><button class="secondary" type="submit">Internal Test: Continue To Intake</button></form>
           <a class="secondary" href="https://fgs-ai.github.io/website-preview-campaign/campaign-v1/hair-godz-studios/">Review Preview</a>
         </div>
         <script>
-          document.querySelector('form[action="https://loud-donkeys-show.loca.lt/api/checkout-test"]')?.addEventListener('submit', (event) => {
+          document.querySelector('form[action="https://fgs-ai.github.io/website-preview-campaign/api/checkout-test"]')?.addEventListener('submit', (event) => {
             event.preventDefault();
             fetch(event.currentTarget.action, { method:'POST', body:new FormData(event.currentTarget) }).finally(() => window.location.href = 'https://fgs-ai.github.io/website-preview-campaign/campaign-v1/hair-godz-studios/intake.html');
           });
