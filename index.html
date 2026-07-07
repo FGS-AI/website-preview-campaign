@@ -4,34 +4,45 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Findable Web Design | Small Business Website Launch Services</title>
-  <meta name="description" content="Affordable small-business web design and website launch services by Findable Web Design, operated by 3822 Longmont LLC.">
+  <meta name="description" content="Findable Web Design builds affordable launch-ready websites for established local businesses that need customers to find, trust, and contact them online.">
   <link rel="icon" href="/assets/findable-mark-v1.svg" type="image/svg+xml">
   <style>
-    :root { color-scheme: light; --ink:#1f2428; --muted:#56616b; --line:#d9e0e6; --accent:#1b6f6f; --accent2:#8f3f63; --soft:#f4f7f7; --warm:#fff8f2; }
+    :root { color-scheme: light; --ink:#1f2428; --muted:#56616b; --line:#d9e0e6; --accent:#1b6f6f; --accent2:#8f3f63; --soft:#f4f7f7; --warm:#fff8f2; --gold:#d79435; }
     body { margin:0; font-family: Arial, Helvetica, sans-serif; color:var(--ink); background:#ffffff; }
-    main { max-width: 1080px; margin: 0 auto; padding: 28px 22px 64px; }
-    nav { display:flex; justify-content:space-between; gap:16px; align-items:center; padding: 12px 0 28px; }
+    main { max-width: 1120px; margin: 0 auto; padding: 24px 22px 64px; }
+    nav { display:flex; justify-content:space-between; gap:16px; align-items:center; padding: 10px 0 22px; }
     .brand { display:inline-flex; align-items:center; min-width:190px; color:var(--ink); }
     .brand img { display:block; width:190px; height:auto; }
     .navnote { font-size: 14px; color: var(--muted); text-align:right; }
-    header { display:grid; grid-template-columns: 1.15fr .85fr; gap: 28px; align-items:center; border-bottom: 1px solid var(--line); padding: 22px 0 34px; }
+    header { display:grid; grid-template-columns: 1.08fr .92fr; gap: 32px; align-items:center; border-bottom: 1px solid var(--line); padding: 26px 0 40px; }
     h1 { font-size: clamp(38px, 6vw, 68px); line-height: 1.02; margin: 0 0 16px; letter-spacing: 0; }
     h2 { font-size: 26px; margin: 38px 0 12px; }
     h3 { font-size: 18px; margin: 0 0 8px; }
     p, li { font-size: 17px; line-height: 1.55; color: var(--muted); }
     .lead { font-size: 20px; color:#3b454f; }
-    .price { display:inline-block; margin-top: 8px; padding: 12px 16px; border:1px solid var(--line); background:var(--warm); font-weight:800; color:var(--ink); border-radius:8px; }
-    .hero-card { border:1px solid var(--line); border-radius:8px; padding:22px; background:var(--soft); }
+    .eyebrow { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; color: var(--accent2); text-transform: uppercase; margin: 0 0 12px; }
+    .price { display:inline-flex; align-items:center; gap:10px; margin: 8px 0 18px; padding: 12px 16px; border:1px solid var(--line); background:var(--warm); font-weight:800; color:var(--ink); border-radius:8px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .cta { display:inline-block; padding: 13px 18px; border-radius:8px; background:var(--accent); color:#fff; text-decoration:none; font-weight:800; }
+    .cta.secondary { background:#ffffff; color:var(--accent); border:1px solid var(--accent); }
+    .hero-card { border:1px solid var(--line); border-radius:8px; padding:24px; background:var(--soft); }
     .hero-card ol { margin: 12px 0 0 22px; padding: 0; }
+    .proof-row { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:18px; }
+    .proof { border:1px solid var(--line); border-radius:8px; padding:14px; background:#fff; }
+    .proof b { display:block; font-size:22px; color:var(--ink); }
     .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top: 20px; }
     .box { border:1px solid var(--line); padding:18px; border-radius:8px; background:#fff; }
     .box strong { display:block; margin-bottom:8px; color:var(--ink); }
-    .band { margin-top: 32px; padding: 22px; border-radius:8px; background:var(--soft); border:1px solid var(--line); }
-    .cta { display:inline-block; margin-top: 12px; padding: 13px 18px; border-radius:8px; background:var(--accent); color:#fff; text-decoration:none; font-weight:800; }
+    .band { margin-top: 32px; padding: 24px; border-radius:8px; background:var(--soft); border:1px solid var(--line); }
+    .offer { display:grid; grid-template-columns: 1fr 320px; gap:22px; align-items:center; }
+    .checkout { border:1px solid var(--line); border-radius:8px; background:#fff; padding:18px; }
+    .checkout .amount { font-size:42px; line-height:1; margin:0 0 8px; color:var(--ink); font-weight:800; }
+    .checkout .cta { width:100%; box-sizing:border-box; text-align:center; margin-top: 12px; }
+    .mini { font-size:14px; color:var(--muted); margin:10px 0 0; }
     .fine { font-size:14px; }
     footer { margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--line); }
     a { color: var(--accent); font-weight: 700; }
-    @media (max-width: 800px) { header,.grid { grid-template-columns:1fr; } .navnote { text-align:left; } nav { align-items:flex-start; flex-direction:column; } main { padding-top: 18px; } }
+    @media (max-width: 800px) { header,.grid,.offer,.proof-row { grid-template-columns:1fr; } .navnote { text-align:left; } nav { align-items:flex-start; flex-direction:column; } main { padding-top: 18px; } }
   </style>
 </head>
 <body>
@@ -42,17 +53,28 @@
     </nav>
     <header>
       <div>
+        <p class="eyebrow">Built for businesses customers already search for</p>
         <h1>Your business is real. Now make it findable.</h1>
-        <p class="lead">Findable Web Design helps established local businesses get a simple, modern website so customers can find them, trust them, and contact them online.</p>
-        <div class="price">$497 launch. No setup fee.</div>
+        <p class="lead">Findable Web Design builds clean websites for established local businesses that have relied on word of mouth, Google listings, Facebook pages, or phone calls for too long.</p>
+        <div class="price">$497 launch <span>No setup fee</span></div>
+        <div class="actions">
+          <a class="cta" href="https://buy.stripe.com/eVqaEYgpf30rfzscFDgnK00">Pay $497 And Start</a>
+          <a class="cta secondary" href="mailto:hello@findablewebdesign.com">Email Findable</a>
+        </div>
       </div>
       <div class="hero-card">
-        <h3>What customers get</h3>
+        <h3>A better front door than “just Google us.”</h3>
+        <p>Google can show a listing, but a real website gives customers somewhere to land, understand the business, and take the next step with confidence.</p>
         <ol>
           <li>A working website preview for their business.</li>
           <li>Launch setup with confirmed phone, address, hours, services, and appointment/contact path.</li>
           <li>Domain guidance if they need a new domain.</li>
         </ol>
+        <div class="proof-row">
+          <div class="proof"><b>$497</b><span>basic launch</span></div>
+          <div class="proof"><b>1 page</b><span>clean starting site</span></div>
+          <div class="proof"><b>Fast</b><span>preview-first process</span></div>
+        </div>
       </div>
     </header>
 
@@ -65,11 +87,18 @@
       </div>
     </section>
 
-    <section class="band">
-      <h2>Findable Website Launch Package</h2>
-      <p>The $497 package is for a basic small-business website launch. It is designed for local service businesses that need a clean web presence, accurate contact information, and an easy path for customers to call, message, or request an appointment.</p>
-      <p>Domain registration is separate and billed at cost if a customer needs a new domain. Custom edits, extra pages, marketing campaigns, or ongoing website care can be quoted separately after the launch request.</p>
-      <a class="cta" href="mailto:troy@fgsfrontrange.com">Contact Findable</a>
+    <section class="band offer">
+      <div>
+        <h2>Findable Website Launch Package</h2>
+        <p>The $497 package is for a basic small-business website launch. It is designed for local service businesses that need a clean web presence, accurate contact information, and an easy path for customers to call, message, or request an appointment.</p>
+        <p>Domain registration is separate and billed at cost if a customer needs a new domain. Custom edits, extra pages, marketing campaigns, or ongoing website care can be quoted separately after the launch request.</p>
+      </div>
+      <div class="checkout">
+        <p class="amount">$497</p>
+        <p><strong>Launch this website.</strong><br>Pay securely, then we confirm details before launch.</p>
+        <a class="cta" href="https://buy.stripe.com/eVqaEYgpf30rfzscFDgnK00">Pay And Start</a>
+        <p class="mini">Secure checkout is handled by Stripe.</p>
+      </div>
     </section>
 
     <section>
@@ -82,7 +111,7 @@
       <p>Findable Web Design<br>
       Operated by 3822 Longmont LLC<br>
       7079 S. Jordan Rd. Suite 6, Centennial, CO 80112<br>
-      <a href="mailto:troy@fgsfrontrange.com">troy@fgsfrontrange.com</a></p>
+      <a href="mailto:hello@findablewebdesign.com">hello@findablewebdesign.com</a></p>
     </section>
 
     <footer>
