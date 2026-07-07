@@ -44,13 +44,7 @@
           <div class="step"><strong>Domain</strong>If you need one, you choose it after checkout and pay domain cost at cost.</div>
         </div>
         <div class="actions">
-          <span class="disabled">Payment Link Not Connected Yet</span>
-          <form method="post" action="https://fgs-ai.github.io/website-preview-campaign/api/launch-interest" style="display:inline">
-            <input type="hidden" name="prospect_slug" value="lambs-eat-ivy-salon">
-            <input type="hidden" name="business" value="Lambs Eat Ivy Salon">
-            <input type="hidden" name="preview_url" value="https://findablewebdesign.com/campaign-v1/lambs-eat-ivy-salon/">
-            <button class="primary" type="submit">Test: Capture Launch Interest</button>
-          </form>
+          <a class="primary" href="https://buy.stripe.com/eVqaEYgpf30rfzscFDgnK00?utm_source=website_preview_email&amp;utm_medium=prospect_checkout&amp;utm_campaign=lambs-eat-ivy-salon">Pay $497 And Continue</a>
           <form method="post" action="https://fgs-ai.github.io/website-preview-campaign/api/checkout-test" style="display:inline"><input type="hidden" name="prospect_slug" value="lambs-eat-ivy-salon"><input type="hidden" name="business" value="Lambs Eat Ivy Salon"><button class="secondary" type="submit">Internal Test: Continue To Intake</button></form>
           <a class="secondary" href="https://findablewebdesign.com/campaign-v1/lambs-eat-ivy-salon/">Review Preview</a>
         </div>
@@ -60,6 +54,6 @@
             fetch(event.currentTarget.action, { method:'POST', body:new FormData(event.currentTarget) }).finally(() => window.location.href = 'https://findablewebdesign.com/campaign-v1/lambs-eat-ivy-salon/intake.html');
           });
         </script>
-        <p class="note">Internal test mode: prospect sending is blocked until a real payment link is connected. The test button records interest in the launch workflow.</p>
+        <p class="note">After payment, continue to the intake page to confirm business details.</p>
       </div>
     </section></main></body></html>
