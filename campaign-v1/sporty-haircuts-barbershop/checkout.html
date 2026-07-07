@@ -48,16 +48,16 @@
           <form method="post" action="https://fgs-ai.github.io/website-preview-campaign/api/launch-interest" style="display:inline">
             <input type="hidden" name="prospect_slug" value="sporty-haircuts-barbershop">
             <input type="hidden" name="business" value="Sporty Haircuts Barbershop">
-            <input type="hidden" name="preview_url" value="https://fgs-ai.github.io/website-preview-campaign/campaign-v1/sporty-haircuts-barbershop/">
+            <input type="hidden" name="preview_url" value="https://findablewebdesign.com/campaign-v1/sporty-haircuts-barbershop/">
             <button class="primary" type="submit">Test: Capture Launch Interest</button>
           </form>
           <form method="post" action="https://fgs-ai.github.io/website-preview-campaign/api/checkout-test" style="display:inline"><input type="hidden" name="prospect_slug" value="sporty-haircuts-barbershop"><input type="hidden" name="business" value="Sporty Haircuts Barbershop"><button class="secondary" type="submit">Internal Test: Continue To Intake</button></form>
-          <a class="secondary" href="https://fgs-ai.github.io/website-preview-campaign/campaign-v1/sporty-haircuts-barbershop/">Review Preview</a>
+          <a class="secondary" href="https://findablewebdesign.com/campaign-v1/sporty-haircuts-barbershop/">Review Preview</a>
         </div>
         <script>
           document.querySelector('form[action="https://fgs-ai.github.io/website-preview-campaign/api/checkout-test"]')?.addEventListener('submit', (event) => {
             event.preventDefault();
-            fetch(event.currentTarget.action, { method:'POST', body:new FormData(event.currentTarget) }).finally(() => window.location.href = 'https://fgs-ai.github.io/website-preview-campaign/campaign-v1/sporty-haircuts-barbershop/intake.html');
+            fetch(event.currentTarget.action, { method:'POST', body:new FormData(event.currentTarget) }).finally(() => window.location.href = 'https://findablewebdesign.com/campaign-v1/sporty-haircuts-barbershop/intake.html');
           });
         </script>
         <p class="note">Internal test mode: prospect sending is blocked until a real payment link is connected. The test button records interest in the launch workflow.</p>
