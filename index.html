@@ -8,88 +8,144 @@
   <link rel="icon" href="/assets/findable-mark-v1.svg" type="image/svg+xml">
   <style>
     :root {
-      color-scheme: light;
-      --ink:#182026; --muted:#5c6670; --line:#d9e1e4; --paper:#fbfaf7;
-      --teal:#0f6f68; --clay:#9d4664; --gold:#cf8a2e; --mint:#e8f3ef; --rose:#f7e9ee;
-      --shadow:0 18px 50px rgba(24,32,38,.13);
+      color-scheme: dark;
+      --ink:#f6efe2; --muted:#b9c6c2; --deep:#10161a; --panel:#172126; --line:rgba(246,239,226,.18);
+      --teal:#34c6b3; --teal-dark:#08776f; --coral:#f06449; --gold:#f0b84f; --plum:#8b4f66;
+      --paper:#fff7e8; --shadow:0 28px 80px rgba(0,0,0,.34);
     }
     * { box-sizing:border-box; }
-    body { margin:0; font-family: Arial, Helvetica, sans-serif; color:var(--ink); background:var(--paper); }
-    body:before { content:""; position:fixed; inset:0; pointer-events:none; background:linear-gradient(90deg, rgba(15,111,104,.06), transparent 34%, rgba(157,70,100,.06)); }
-    a { color:var(--teal); font-weight:800; }
+    html { background:var(--deep); }
+    body {
+      margin:0;
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:
+        linear-gradient(120deg, rgba(240,184,79,.12) 0 1px, transparent 1px 70px),
+        linear-gradient(150deg, rgba(52,198,179,.11) 0 1px, transparent 1px 92px),
+        linear-gradient(135deg, #10161a 0%, #172126 46%, #2b1f2b 100%);
+      overflow-x:hidden;
+    }
+    a { color:var(--teal); font-weight:900; }
     main { position:relative; }
-    .shell { max-width:1080px; margin:0 auto; padding:24px 22px 72px; }
-    nav { display:flex; justify-content:space-between; gap:18px; align-items:center; padding:6px 0 28px; }
-    .brand img { display:block; width:210px; height:auto; }
-    .navnote { font-size:14px; color:var(--muted); text-align:right; }
-    .hero { min-height:calc(100vh - 40px); display:grid; grid-template-columns:minmax(0,1.05fr) minmax(320px,.75fr); gap:34px; align-items:center; padding:18px 0 44px; }
-    .eyebrow { margin:0 0 14px; color:var(--clay); font-size:13px; font-weight:900; letter-spacing:1.6px; text-transform:uppercase; }
-    h1 { margin:0; max-width:760px; font-size:clamp(46px,7vw,82px); line-height:1; letter-spacing:0; }
-    .lead { margin:22px 0 0; max-width:660px; font-size:21px; line-height:1.48; color:#39444d; }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:26px; }
-    .cta { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:14px 20px; border-radius:8px; background:var(--teal); color:white; text-decoration:none; font-weight:900; box-shadow:0 10px 24px rgba(15,111,104,.22); }
-    .cta.secondary { background:white; color:var(--teal); border:1px solid rgba(15,111,104,.42); box-shadow:none; }
-    .launch-line { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
-    .pill { display:inline-flex; align-items:center; min-height:36px; padding:8px 12px; border:1px solid var(--line); border-radius:8px; background:white; color:#37434c; font-weight:800; font-size:14px; }
-    .stage { position:relative; min-height:520px; }
-    .browser { position:absolute; border:1px solid #cfd8dc; border-radius:8px; background:white; box-shadow:var(--shadow); overflow:hidden; }
-    .browser.big { inset:20px auto auto 0; width:86%; min-height:410px; }
-    .browser.small { right:0; bottom:0; width:38%; min-height:252px; }
-    .bar { height:34px; display:flex; align-items:center; gap:7px; padding:0 12px; border-bottom:1px solid #e1e7e9; background:#f7f8f8; }
-    .dot { width:9px; height:9px; border-radius:50%; background:#cf5c4d; }
-    .dot:nth-child(2) { background:#d6a73d; }
-    .dot:nth-child(3) { background:#4d9f6f; }
-    .mock { padding:24px; }
-    .mock-hero { padding:26px; border-radius:8px; background:linear-gradient(135deg,#15343b,#0f6f68 58%,#9d4664); color:white; }
-    .mock-hero b { display:block; font-size:13px; margin-bottom:40px; opacity:.78; }
-    .mock-hero strong { display:block; font-size:31px; line-height:1.05; max-width:360px; }
-    .mock-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
-    .tile { min-height:84px; border-radius:8px; background:#f1f5f4; padding:12px; }
-    .tile span { display:block; width:70%; height:8px; border-radius:8px; background:#b9c8c7; margin-bottom:9px; }
-    .tile span:last-child { width:44%; background:#d6a7b6; }
-    .phone-screen { background:#19252b; min-height:216px; padding:18px; color:white; }
-    .phone-screen .block { height:74px; border-radius:8px; background:#f7e9ee; margin:12px 0; }
-    .phone-screen .line { height:8px; border-radius:8px; background:#7fa7a2; margin:10px 0; }
-    .phone-screen .button { margin-top:18px; height:38px; border-radius:8px; background:var(--gold); }
-    section { padding:56px 0 0; }
-    h2 { margin:0 0 14px; font-size:clamp(30px,4vw,46px); line-height:1.08; }
+    .shell { width:min(1180px, calc(100% - 36px)); margin:0 auto; padding:22px 0 64px; }
+    nav { display:flex; justify-content:space-between; gap:18px; align-items:center; padding:8px 0 26px; }
+    .brand { display:inline-flex; align-items:center; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:rgba(255,247,232,.08); backdrop-filter:blur(10px); }
+    .brand img { display:block; width:198px; height:auto; filter:drop-shadow(0 10px 20px rgba(0,0,0,.26)); }
+    .navnote { font-size:13px; color:var(--muted); text-align:right; white-space:nowrap; }
+    .hero {
+      min-height:calc(100vh - 52px);
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(430px,.9fr);
+      gap:42px;
+      align-items:center;
+      padding:20px 0 54px;
+    }
+    .eyebrow { margin:0 0 16px; color:var(--gold); font-size:13px; font-weight:950; letter-spacing:1.8px; text-transform:uppercase; }
+    h1 { margin:0; max-width:790px; font-size:clamp(50px,7.4vw,96px); line-height:.93; letter-spacing:0; }
+    .lead { margin:24px 0 0; max-width:660px; font-size:21px; line-height:1.5; color:#d5ded9; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:28px; }
+    .cta {
+      display:inline-flex; justify-content:center; align-items:center; min-height:52px; padding:15px 22px;
+      border-radius:8px; background:var(--coral); color:#1b1110; text-decoration:none; font-weight:950;
+      box-shadow:0 18px 36px rgba(240,100,73,.28);
+    }
+    .cta.secondary { background:transparent; color:var(--ink); border:1px solid rgba(246,239,226,.34); box-shadow:none; }
+    .launch-line { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+    .pill { display:inline-flex; align-items:center; min-height:36px; padding:8px 12px; border:1px solid rgba(246,239,226,.22); border-radius:8px; background:rgba(255,247,232,.08); color:#f6efe2; font-weight:900; font-size:14px; }
+    .stage { position:relative; min-height:620px; perspective:1200px; }
+    .presence-map {
+      position:absolute; inset:10px 0 auto auto; width:96%; min-height:590px; border:1px solid rgba(246,239,226,.2);
+      border-radius:8px; background:rgba(255,247,232,.07); box-shadow:var(--shadow); overflow:hidden;
+    }
+    .presence-map:before {
+      content:""; position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size:42px 42px; opacity:.7;
+    }
+    .missing-card,.found-card,.phone-card {
+      position:absolute; border-radius:8px; border:1px solid rgba(246,239,226,.22); box-shadow:0 24px 60px rgba(0,0,0,.34);
+      overflow:hidden;
+    }
+    .missing-card {
+      left:24px; top:36px; width:52%; min-height:245px; background:#f9f2e7; color:#1e2529; transform:rotate(-3deg);
+    }
+    .search-bar { display:flex; gap:8px; align-items:center; height:44px; padding:0 14px; border-bottom:1px solid #d9d1c5; color:#5a6469; font-weight:800; }
+    .search-line { height:12px; border-radius:12px; background:#d8d1c7; margin:18px; }
+    .search-line.short { width:56%; }
+    .warning { margin:18px; padding:14px; border-left:5px solid var(--coral); background:#fff; font-weight:950; }
+    .warning span { display:block; margin-top:8px; color:#667077; font-size:14px; font-weight:800; }
+    .found-card {
+      right:20px; top:112px; width:67%; min-height:390px; background:#fff7e8; color:#172126; transform:rotate(2deg);
+    }
+    .topbar { height:38px; display:flex; align-items:center; gap:8px; padding:0 13px; background:#efe6d6; border-bottom:1px solid #d8cdbb; }
+    .dot { width:9px; height:9px; border-radius:50%; background:var(--coral); }
+    .dot:nth-child(2) { background:var(--gold); }
+    .dot:nth-child(3) { background:var(--teal-dark); }
+    .site-hero { margin:18px; padding:22px; border-radius:8px; background:linear-gradient(135deg,#0d6d65,#15343b 58%,#8b4f66); color:white; }
+    .site-hero b { display:block; margin-bottom:58px; color:#bdece5; font-size:12px; letter-spacing:1px; }
+    .site-hero strong { display:block; max-width:310px; font-size:34px; line-height:1; }
+    .site-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 18px 18px; }
+    .tile { min-height:86px; padding:12px; border-radius:8px; background:#ede4d4; }
+    .tile span { display:block; height:8px; border-radius:8px; background:#91aaa4; margin-bottom:9px; }
+    .tile span:last-child { width:58%; background:#d28c74; }
+    .phone-card { right:6px; bottom:26px; width:31%; min-height:250px; background:#111b20; transform:rotate(-1deg); }
+    .phone-screen { padding:18px; }
+    .phone-screen .line { height:8px; border-radius:8px; background:#77aaa2; margin:10px 0; }
+    .phone-screen .photo { height:76px; border-radius:8px; background:#f4d7d2; margin:16px 0; }
+    .phone-screen .button { height:38px; border-radius:8px; background:var(--gold); margin-top:18px; }
+    .stamp {
+      position:absolute; left:26px; bottom:34px; max-width:235px; padding:16px; border-radius:8px;
+      background:#10161a; border:1px solid rgba(246,239,226,.24); color:#f6efe2; font-weight:950; transform:rotate(-2deg);
+    }
+    section { padding:66px 0 0; }
+    h2 { margin:0 0 14px; font-size:clamp(34px,4.4vw,54px); line-height:1; letter-spacing:0; }
     h3 { margin:0 0 8px; font-size:20px; }
     p, li { font-size:17px; line-height:1.55; color:var(--muted); }
-    .section-lead { max-width:720px; font-size:19px; color:#3d4850; }
-    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px; }
-    .box { border:1px solid var(--line); background:white; border-radius:8px; padding:20px; box-shadow:0 8px 24px rgba(24,32,38,.05); }
+    .section-lead { max-width:760px; font-size:20px; color:#d8e0dc; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
+    .box { border:1px solid var(--line); background:rgba(255,247,232,.08); border-radius:8px; padding:22px; box-shadow:0 18px 40px rgba(0,0,0,.16); }
     .box strong { display:block; margin-bottom:8px; color:var(--ink); font-size:18px; }
-    .proof-band { display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:stretch; margin-top:36px; }
-    .proof-panel { border-radius:8px; border:1px solid var(--line); padding:26px; background:#182026; color:white; }
-    .proof-panel p { color:#dce5e4; }
-    .proof-panel .metric { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:24px; }
-    .metric div { padding:14px; border-radius:8px; background:rgba(255,255,255,.1); }
-    .metric b { display:block; font-size:25px; color:white; }
-    .offer { border:1px solid var(--line); border-radius:8px; background:white; display:grid; grid-template-columns:1fr 330px; gap:24px; padding:28px; box-shadow:var(--shadow); }
-    .price { font-size:58px; line-height:1; font-weight:900; margin:0 0 8px; }
-    .checkout { border-radius:8px; background:var(--mint); padding:22px; border:1px solid #c9deda; }
-    .checkout .cta { width:100%; margin-top:12px; }
+    .proof-band { display:grid; grid-template-columns:.9fr 1.1fr; gap:18px; align-items:stretch; margin-top:40px; }
+    .proof-panel { border-radius:8px; border:1px solid rgba(240,184,79,.38); padding:30px; background:#f6efe2; color:#141b1f; }
+    .proof-panel p { color:#405056; }
+    .metric { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:24px; }
+    .metric div { padding:14px; border-radius:8px; background:#172126; color:#d8e0dc; }
+    .metric b { display:block; font-size:28px; color:var(--gold); }
+    .offer {
+      border:1px solid rgba(246,239,226,.22); border-radius:8px; background:linear-gradient(135deg, rgba(255,247,232,.13), rgba(52,198,179,.08));
+      display:grid; grid-template-columns:1fr 350px; gap:24px; padding:30px; box-shadow:var(--shadow);
+    }
+    .price { font-size:64px; line-height:1; font-weight:950; margin:0 0 8px; color:var(--gold); }
+    .checkout { border-radius:8px; background:#f6efe2; color:#172126; padding:24px; border:1px solid rgba(255,255,255,.34); }
+    .checkout p { color:#3e4a4f; }
+    .checkout .cta { width:100%; margin-top:12px; color:#1b1110; }
     .mini,.fine { font-size:14px; }
-    footer { margin-top:50px; padding-top:24px; border-top:1px solid var(--line); }
-    @media (max-width:900px) {
-      .shell { padding:18px 18px 54px; }
+    footer { margin-top:54px; padding-top:24px; border-top:1px solid var(--line); }
+    @media (max-width:980px) {
       .hero,.grid,.proof-band,.offer { grid-template-columns:1fr; }
       .hero { min-height:auto; }
-      .stage { min-height:520px; }
-      .browser.big { left:0; width:92%; }
-      .browser.small { width:58%; right:0; }
-      .navnote { text-align:left; }
+      .stage { min-height:590px; }
+      .presence-map { left:0; right:auto; width:100%; }
       nav { align-items:flex-start; flex-direction:column; }
+      .navnote { text-align:left; }
     }
     @media (max-width:560px) {
-      h1 { font-size:44px; }
-      .stage { min-height:430px; }
-      .browser.big { min-height:350px; }
-      .browser.small { min-height:250px; width:68%; }
-      .mock { padding:14px; }
-      .mock-hero strong { font-size:24px; }
-      .mock-row { grid-template-columns:1fr; }
-      .proof-panel .metric { grid-template-columns:1fr; }
+      .shell { width:min(100% - 24px, 1180px); padding-top:12px; }
+      .brand img { width:168px; }
+      h1 { font-size:48px; }
+      .lead { font-size:18px; }
+      .actions .cta { width:100%; }
+      .stage { min-height:520px; }
+      .missing-card { width:70%; left:6px; top:22px; }
+      .found-card { width:86%; right:0; top:142px; }
+      .site-hero strong { font-size:25px; }
+      .site-grid { grid-template-columns:1fr; }
+      .phone-card { width:45%; min-height:220px; }
+      .stamp { left:8px; bottom:24px; width:50%; font-size:14px; }
+      .metric { grid-template-columns:1fr; }
+      .offer { padding:20px; }
     }
   </style>
 </head>
@@ -101,72 +157,81 @@
     </nav>
     <header class="hero">
       <div>
-        <p class="eyebrow">Website launches for old-school local businesses</p>
-        <h1>Give customers a real front door online.</h1>
-        <p class="lead">Findable builds polished, practical websites for businesses that already have customers, reviews, and phone calls, but still do not have a place online that feels trustworthy.</p>
+        <p class="eyebrow">Website launches for businesses customers already search for</p>
+        <h1>Stop looking invisible online.</h1>
+        <p class="lead">Findable turns a business with scattered listings, old social pages, and no real website into a clean online front door customers can trust, call, and book from.</p>
         <div class="actions">
-          <a class="cta" href="https://buy.stripe.com/eVqaEYgpf30rfzscFDgnK00">Pay $497 And Start</a>
+          <a class="cta" href="https://buy.stripe.com/eVqaEYgpf30rfzscFDgnK00">Launch For $497</a>
           <a class="cta secondary" href="mailto:troy@fgsfrontrange.com">Ask A Question</a>
         </div>
         <div class="launch-line">
-          <span class="pill">$497 launch</span>
+          <span class="pill">$497 base launch</span>
           <span class="pill">No setup fee</span>
           <span class="pill">Preview before publishing</span>
         </div>
       </div>
-      <div class="stage" aria-label="Website preview examples">
-        <div class="browser big">
-          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-          <div class="mock">
-            <div class="mock-hero">
-              <b>LIVE WEBSITE PREVIEW</b>
-              <strong>Hours, services, calls, and booking in one clean place.</strong>
+      <div class="stage" aria-label="Before and after web presence preview">
+        <div class="presence-map">
+          <div class="missing-card">
+            <div class="search-bar">Search: your business near me</div>
+            <div class="search-line"></div>
+            <div class="search-line short"></div>
+            <div class="warning">No website found
+              <span>Customers hit a listing, a phone number, or nothing useful.</span>
             </div>
-            <div class="mock-row">
+          </div>
+          <div class="found-card">
+            <div class="topbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="site-hero">
+              <b>LIVE CUSTOMER FRONT DOOR</b>
+              <strong>Services, hours, photos, calls, and booking in one credible place.</strong>
+            </div>
+            <div class="site-grid">
               <div class="tile"><span></span><span></span></div>
               <div class="tile"><span></span><span></span></div>
               <div class="tile"><span></span><span></span></div>
             </div>
           </div>
-        </div>
-        <div class="browser small">
-          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-          <div class="phone-screen">
-            <div class="line" style="width:70%"></div>
-            <div class="block"></div>
-            <div class="line" style="width:88%"></div>
-            <div class="line" style="width:56%"></div>
-            <div class="button"></div>
+          <div class="phone-card">
+            <div class="topbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="phone-screen">
+              <div class="line" style="width:72%"></div>
+              <div class="photo"></div>
+              <div class="line" style="width:88%"></div>
+              <div class="line" style="width:54%"></div>
+              <div class="button"></div>
+            </div>
           </div>
+          <div class="stamp">From invisible listing to a real website customers can act on.</div>
         </div>
       </div>
     </header>
 
     <section>
-      <h2>Not fancy. Just finally findable.</h2>
-      <p class="section-lead">Most customers do not need a complicated website. They need to know the business is real, understand what it does, and see the next step without hunting through scattered listings.</p>
+      <h2>Not a vanity site. A trust signal.</h2>
+      <p class="section-lead">The first job is simple: when someone searches the business name, the business should look alive, legitimate, and easy to contact.</p>
       <div class="grid">
-        <div class="box"><strong>Shows up cleanly</strong><p>A real web page gives Google searchers somewhere better to land than a bare listing, old Facebook page, or disconnected review profile.</p></div>
-        <div class="box"><strong>Answers fast</strong><p>Phone, address, hours, services, photos, and appointment/contact path sit in one calm, mobile-friendly layout.</p></div>
-        <div class="box"><strong>Launches without drama</strong><p>The business confirms the basics, we clean up the preview, then publish and connect the domain path.</p></div>
+        <div class="box"><strong>Fixes the dead end</strong><p>A real site gives Google, customers, and referrals somewhere solid to land instead of a bare listing or old social page.</p></div>
+        <div class="box"><strong>Makes the business feel real</strong><p>Hours, phone, address, services, photos, and next step sit in one sharp mobile-friendly page.</p></div>
+        <div class="box"><strong>Starts with a preview</strong><p>The customer sees the direction before launch, then confirms the basics instead of starting from a blank page.</p></div>
       </div>
     </section>
 
     <section class="proof-band">
       <div class="proof-panel">
         <h2>A better front door than “just Google us.”</h2>
-        <p>Google can show that a business exists. A website makes it feel current, organized, and worth calling.</p>
+        <p>Google may know the business exists. A website tells customers it is current, organized, and worth choosing.</p>
         <div class="metric">
           <div><b>$497</b><span>base launch</span></div>
-          <div><b>1 page</b><span>clean starting site</span></div>
+          <div><b>1 page</b><span>credible starting site</span></div>
           <div><b>Fast</b><span>preview-first process</span></div>
         </div>
       </div>
       <div>
         <div class="grid" style="grid-template-columns:1fr; margin-top:0;">
-          <div class="box"><strong>1. Preview</strong><p>We create a private working preview around the business name, real contact details, services, and next step.</p></div>
-          <div class="box"><strong>2. Confirm</strong><p>The business corrects hours, services, photos, booking preference, and any wording before launch.</p></div>
-          <div class="box"><strong>3. Publish</strong><p>We launch the site and help connect a domain if the business wants one.</p></div>
+          <div class="box"><strong>1. Build the first version</strong><p>We shape a working preview around the business name, real contact details, services, and the best customer action.</p></div>
+          <div class="box"><strong>2. Clean up the facts</strong><p>The business corrects hours, services, photos, booking preference, and wording before launch.</p></div>
+          <div class="box"><strong>3. Go live</strong><p>We launch the site and help connect a domain if the business wants one.</p></div>
         </div>
       </div>
     </section>
@@ -174,7 +239,7 @@
     <section class="offer">
       <div>
         <h2>Findable Website Launch Package</h2>
-        <p>The $497 package is for a basic small-business website launch. It is designed for local service businesses that need a clean web presence, accurate contact information, and an easy path for customers to call, message, or request an appointment.</p>
+        <p>The $497 package is for a basic small-business website launch. It is built for real local businesses that already have customers but need a credible web presence, accurate contact information, and an easy path for customers to call, message, or request an appointment.</p>
         <p>Domain registration is separate and billed at cost if a customer needs a new domain. Custom edits, extra pages, marketing campaigns, or ongoing website care can be quoted separately after the launch request.</p>
       </div>
       <div class="checkout">
