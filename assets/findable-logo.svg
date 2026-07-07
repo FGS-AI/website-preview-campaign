@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 144" role="img" aria-labelledby="title desc">
+  <title id="title">Findable Web Design</title>
+  <desc id="desc">A front door and search mark beside the Findable wordmark.</desc>
+  <defs>
+    <linearGradient id="findable-a" x1="20" y1="16" x2="118" y2="128" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1b6f6f"/>
+      <stop offset="1" stop-color="#8f3f63"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="124" height="124" rx="28" fill="url(#findable-a)"/>
+  <path d="M42 105V54.5L72 34l30 20.5V105H42Z" fill="#fff8f2"/>
+  <path d="M58 105V65h28v40H58Z" fill="#1f2428"/>
+  <circle cx="92" cy="52" r="15.5" fill="none" stroke="#1f2428" stroke-width="9"/>
+  <path d="M104 64l18 18" stroke="#1f2428" stroke-width="10" stroke-linecap="round"/>
+  <path d="M79 83h5" stroke="#fff8f2" stroke-width="4" stroke-linecap="round"/>
+  <text x="160" y="84" fill="#1f2428" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800" letter-spacing="0">Findable</text>
+  <text x="164" y="113" fill="#56616b" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="3">WEB DESIGN</text>
+</svg>
