@@ -29,8 +29,8 @@
     main { position:relative; }
     .shell { width:min(1180px, calc(100% - 36px)); margin:0 auto; padding:22px 0 64px; }
     nav { display:flex; justify-content:space-between; gap:18px; align-items:center; padding:8px 0 26px; }
-    .brand { display:inline-flex; align-items:center; padding:8px 10px; border:1px solid var(--line); border-radius:8px; background:rgba(255,247,232,.08); backdrop-filter:blur(10px); }
-    .brand img { display:block; width:198px; height:auto; filter:drop-shadow(0 10px 20px rgba(0,0,0,.26)); }
+    .brand { display:inline-flex; align-items:center; padding:8px 10px; border:1px solid rgba(246,239,226,.28); border-radius:8px; background:#fff7e8; box-shadow:0 16px 34px rgba(0,0,0,.22); }
+    .brand img { display:block; width:198px; height:auto; }
     .navnote { font-size:13px; color:var(--muted); text-align:right; white-space:nowrap; }
     .hero {
       min-height:calc(100vh - 52px);
@@ -69,7 +69,7 @@
       overflow:hidden;
     }
     .missing-card {
-      left:24px; top:36px; width:52%; min-height:245px; background:#f9f2e7; color:#1e2529; transform:rotate(-3deg);
+      left:24px; top:36px; width:50%; min-height:245px; background:#f9f2e7; color:#1e2529; transform:rotate(-3deg);
     }
     .search-bar { display:flex; gap:8px; align-items:center; height:44px; padding:0 14px; border-bottom:1px solid #d9d1c5; color:#5a6469; font-weight:800; }
     .search-line { height:12px; border-radius:12px; background:#d8d1c7; margin:18px; }
@@ -77,7 +77,7 @@
     .warning { margin:18px; padding:14px; border-left:5px solid var(--coral); background:#fff; font-weight:950; }
     .warning span { display:block; margin-top:8px; color:#667077; font-size:14px; font-weight:800; }
     .found-card {
-      right:20px; top:112px; width:67%; min-height:390px; background:#fff7e8; color:#172126; transform:rotate(2deg);
+      right:42px; top:126px; width:62%; min-height:390px; background:#fff7e8; color:#172126; transform:rotate(2deg);
     }
     .topbar { height:38px; display:flex; align-items:center; gap:8px; padding:0 13px; background:#efe6d6; border-bottom:1px solid #d8cdbb; }
     .dot { width:9px; height:9px; border-radius:50%; background:var(--coral); }
@@ -85,12 +85,12 @@
     .dot:nth-child(3) { background:var(--teal-dark); }
     .site-hero { margin:18px; padding:22px; border-radius:8px; background:linear-gradient(135deg,#0d6d65,#15343b 58%,#8b4f66); color:white; }
     .site-hero b { display:block; margin-bottom:58px; color:#bdece5; font-size:12px; letter-spacing:1px; }
-    .site-hero strong { display:block; max-width:310px; font-size:34px; line-height:1; }
+    .site-hero strong { display:block; max-width:290px; font-size:30px; line-height:1; }
     .site-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 18px 18px; }
     .tile { min-height:86px; padding:12px; border-radius:8px; background:#ede4d4; }
     .tile span { display:block; height:8px; border-radius:8px; background:#91aaa4; margin-bottom:9px; }
     .tile span:last-child { width:58%; background:#d28c74; }
-    .phone-card { right:6px; bottom:26px; width:31%; min-height:250px; background:#111b20; transform:rotate(-1deg); }
+    .phone-card { right:10px; bottom:28px; width:28%; min-height:250px; background:#111b20; transform:rotate(-1deg); }
     .phone-screen { padding:18px; }
     .phone-screen .line { height:8px; border-radius:8px; background:#77aaa2; margin:10px 0; }
     .phone-screen .photo { height:76px; border-radius:8px; background:#f4d7d2; margin:16px 0; }
@@ -139,7 +139,7 @@
       .actions .cta { width:100%; }
       .stage { min-height:520px; }
       .missing-card { width:70%; left:6px; top:22px; }
-      .found-card { width:86%; right:0; top:142px; }
+      .found-card { width:84%; right:0; top:142px; }
       .site-hero strong { font-size:25px; }
       .site-grid { grid-template-columns:1fr; }
       .phone-card { width:45%; min-height:220px; }
@@ -184,7 +184,7 @@
             <div class="topbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
             <div class="site-hero">
               <b>LIVE CUSTOMER FRONT DOOR</b>
-              <strong>Services, hours, photos, calls, and booking in one credible place.</strong>
+              <strong>Services, photos, calls, and booking in one clear place.</strong>
             </div>
             <div class="site-grid">
               <div class="tile"><span></span><span></span></div>
