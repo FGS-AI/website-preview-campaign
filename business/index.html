@@ -7,87 +7,171 @@
   <meta name="description" content="Findable Web Design builds affordable launch-ready websites for established local businesses that need customers to find, trust, and contact them online.">
   <link rel="icon" href="/assets/findable-mark-v1.svg" type="image/svg+xml">
   <style>
-    :root { color-scheme: light; --ink:#1f2428; --muted:#56616b; --line:#d9e0e6; --accent:#1b6f6f; --accent2:#8f3f63; --soft:#f4f7f7; --warm:#fff8f2; --gold:#d79435; }
-    body { margin:0; font-family: Arial, Helvetica, sans-serif; color:var(--ink); background:#ffffff; }
-    main { max-width: 1120px; margin: 0 auto; padding: 24px 22px 64px; }
-    nav { display:flex; justify-content:space-between; gap:16px; align-items:center; padding: 10px 0 22px; }
-    .brand { display:inline-flex; align-items:center; min-width:190px; color:var(--ink); }
-    .brand img { display:block; width:190px; height:auto; }
-    .navnote { font-size: 14px; color: var(--muted); text-align:right; }
-    header { display:grid; grid-template-columns: 1.08fr .92fr; gap: 32px; align-items:center; border-bottom: 1px solid var(--line); padding: 26px 0 40px; }
-    h1 { font-size: clamp(38px, 6vw, 68px); line-height: 1.02; margin: 0 0 16px; letter-spacing: 0; }
-    h2 { font-size: 26px; margin: 38px 0 12px; }
-    h3 { font-size: 18px; margin: 0 0 8px; }
-    p, li { font-size: 17px; line-height: 1.55; color: var(--muted); }
-    .lead { font-size: 20px; color:#3b454f; }
-    .eyebrow { font-size: 13px; font-weight: 800; letter-spacing: 1.5px; color: var(--accent2); text-transform: uppercase; margin: 0 0 12px; }
-    .price { display:inline-flex; align-items:center; gap:10px; margin: 8px 0 18px; padding: 12px 16px; border:1px solid var(--line); background:var(--warm); font-weight:800; color:var(--ink); border-radius:8px; }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
-    .cta { display:inline-block; padding: 13px 18px; border-radius:8px; background:var(--accent); color:#fff; text-decoration:none; font-weight:800; }
-    .cta.secondary { background:#ffffff; color:var(--accent); border:1px solid var(--accent); }
-    .hero-card { border:1px solid var(--line); border-radius:8px; padding:24px; background:var(--soft); }
-    .hero-card ol { margin: 12px 0 0 22px; padding: 0; }
-    .proof-row { display:grid; grid-template-columns: repeat(3, 1fr); gap:12px; margin-top:18px; }
-    .proof { border:1px solid var(--line); border-radius:8px; padding:14px; background:#fff; }
-    .proof b { display:block; font-size:22px; color:var(--ink); }
-    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-top: 20px; }
-    .box { border:1px solid var(--line); padding:18px; border-radius:8px; background:#fff; }
-    .box strong { display:block; margin-bottom:8px; color:var(--ink); }
-    .band { margin-top: 32px; padding: 24px; border-radius:8px; background:var(--soft); border:1px solid var(--line); }
-    .offer { display:grid; grid-template-columns: 1fr 320px; gap:22px; align-items:center; }
-    .checkout { border:1px solid var(--line); border-radius:8px; background:#fff; padding:18px; }
-    .checkout .amount { font-size:42px; line-height:1; margin:0 0 8px; color:var(--ink); font-weight:800; }
-    .checkout .cta { width:100%; box-sizing:border-box; text-align:center; margin-top: 12px; }
-    .mini { font-size:14px; color:var(--muted); margin:10px 0 0; }
-    .fine { font-size:14px; }
-    footer { margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--line); }
-    a { color: var(--accent); font-weight: 700; }
-    @media (max-width: 800px) { header,.grid,.offer,.proof-row { grid-template-columns:1fr; } .navnote { text-align:left; } nav { align-items:flex-start; flex-direction:column; } main { padding-top: 18px; } }
+    :root {
+      color-scheme: light;
+      --ink:#182026; --muted:#5c6670; --line:#d9e1e4; --paper:#fbfaf7;
+      --teal:#0f6f68; --clay:#9d4664; --gold:#cf8a2e; --mint:#e8f3ef; --rose:#f7e9ee;
+      --shadow:0 18px 50px rgba(24,32,38,.13);
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; color:var(--ink); background:var(--paper); }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; background:linear-gradient(90deg, rgba(15,111,104,.06), transparent 34%, rgba(157,70,100,.06)); }
+    a { color:var(--teal); font-weight:800; }
+    main { position:relative; }
+    .shell { max-width:1160px; margin:0 auto; padding:24px 22px 72px; }
+    nav { display:flex; justify-content:space-between; gap:18px; align-items:center; padding:6px 0 28px; }
+    .brand img { display:block; width:210px; height:auto; }
+    .navnote { font-size:14px; color:var(--muted); text-align:right; }
+    .hero { min-height:calc(100vh - 40px); display:grid; grid-template-columns:minmax(0,1.03fr) minmax(360px,.97fr); gap:40px; align-items:center; padding:18px 0 44px; }
+    .eyebrow { margin:0 0 14px; color:var(--clay); font-size:13px; font-weight:900; letter-spacing:1.6px; text-transform:uppercase; }
+    h1 { margin:0; max-width:760px; font-size:clamp(46px,7vw,82px); line-height:1; letter-spacing:0; }
+    .lead { margin:22px 0 0; max-width:660px; font-size:21px; line-height:1.48; color:#39444d; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:26px; }
+    .cta { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:14px 20px; border-radius:8px; background:var(--teal); color:white; text-decoration:none; font-weight:900; box-shadow:0 10px 24px rgba(15,111,104,.22); }
+    .cta.secondary { background:white; color:var(--teal); border:1px solid rgba(15,111,104,.42); box-shadow:none; }
+    .launch-line { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+    .pill { display:inline-flex; align-items:center; min-height:36px; padding:8px 12px; border:1px solid var(--line); border-radius:8px; background:white; color:#37434c; font-weight:800; font-size:14px; }
+    .stage { position:relative; min-height:560px; }
+    .browser { position:absolute; border:1px solid #cfd8dc; border-radius:8px; background:white; box-shadow:var(--shadow); overflow:hidden; }
+    .browser.big { inset:20px 0 auto 28px; width:88%; min-height:440px; }
+    .browser.small { right:20px; bottom:4px; width:46%; min-height:320px; }
+    .bar { height:34px; display:flex; align-items:center; gap:7px; padding:0 12px; border-bottom:1px solid #e1e7e9; background:#f7f8f8; }
+    .dot { width:9px; height:9px; border-radius:50%; background:#cf5c4d; }
+    .dot:nth-child(2) { background:#d6a73d; }
+    .dot:nth-child(3) { background:#4d9f6f; }
+    .mock { padding:24px; }
+    .mock-hero { padding:26px; border-radius:8px; background:linear-gradient(135deg,#15343b,#0f6f68 58%,#9d4664); color:white; }
+    .mock-hero b { display:block; font-size:13px; margin-bottom:40px; opacity:.78; }
+    .mock-hero strong { display:block; font-size:31px; line-height:1.05; max-width:360px; }
+    .mock-row { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:14px; }
+    .tile { min-height:84px; border-radius:8px; background:#f1f5f4; padding:12px; }
+    .tile span { display:block; width:70%; height:8px; border-radius:8px; background:#b9c8c7; margin-bottom:9px; }
+    .tile span:last-child { width:44%; background:#d6a7b6; }
+    .phone-screen { background:#19252b; min-height:286px; padding:18px; color:white; }
+    .phone-screen .block { height:74px; border-radius:8px; background:#f7e9ee; margin:12px 0; }
+    .phone-screen .line { height:8px; border-radius:8px; background:#7fa7a2; margin:10px 0; }
+    .phone-screen .button { margin-top:18px; height:38px; border-radius:8px; background:var(--gold); }
+    section { padding:56px 0 0; }
+    h2 { margin:0 0 14px; font-size:clamp(30px,4vw,46px); line-height:1.08; }
+    h3 { margin:0 0 8px; font-size:20px; }
+    p, li { font-size:17px; line-height:1.55; color:var(--muted); }
+    .section-lead { max-width:720px; font-size:19px; color:#3d4850; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px; }
+    .box { border:1px solid var(--line); background:white; border-radius:8px; padding:20px; box-shadow:0 8px 24px rgba(24,32,38,.05); }
+    .box strong { display:block; margin-bottom:8px; color:var(--ink); font-size:18px; }
+    .proof-band { display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:stretch; margin-top:36px; }
+    .proof-panel { border-radius:8px; border:1px solid var(--line); padding:26px; background:#182026; color:white; }
+    .proof-panel p { color:#dce5e4; }
+    .proof-panel .metric { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:24px; }
+    .metric div { padding:14px; border-radius:8px; background:rgba(255,255,255,.1); }
+    .metric b { display:block; font-size:25px; color:white; }
+    .offer { border:1px solid var(--line); border-radius:8px; background:white; display:grid; grid-template-columns:1fr 330px; gap:24px; padding:28px; box-shadow:var(--shadow); }
+    .price { font-size:58px; line-height:1; font-weight:900; margin:0 0 8px; }
+    .checkout { border-radius:8px; background:var(--mint); padding:22px; border:1px solid #c9deda; }
+    .checkout .cta { width:100%; margin-top:12px; }
+    .mini,.fine { font-size:14px; }
+    footer { margin-top:50px; padding-top:24px; border-top:1px solid var(--line); }
+    @media (max-width:900px) {
+      .shell { padding:18px 18px 54px; }
+      .hero,.grid,.proof-band,.offer { grid-template-columns:1fr; }
+      .hero { min-height:auto; }
+      .stage { min-height:520px; }
+      .browser.big { left:0; width:92%; }
+      .browser.small { width:58%; right:0; }
+      .navnote { text-align:left; }
+      nav { align-items:flex-start; flex-direction:column; }
+    }
+    @media (max-width:560px) {
+      h1 { font-size:44px; }
+      .stage { min-height:430px; }
+      .browser.big { min-height:350px; }
+      .browser.small { min-height:250px; width:68%; }
+      .mock { padding:14px; }
+      .mock-hero strong { font-size:24px; }
+      .mock-row { grid-template-columns:1fr; }
+      .proof-panel .metric { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
-  <main>
+  <main class="shell">
     <nav>
       <a class="brand" href="/" aria-label="Findable Web Design home"><img src="/assets/findable-logo-v1.svg" alt="Findable Web Design"></a>
       <div class="navnote">Operated by 3822 Longmont LLC</div>
     </nav>
-    <header>
+    <header class="hero">
       <div>
-        <p class="eyebrow">Built for businesses customers already search for</p>
-        <h1>Your business is real. Now make it findable.</h1>
-        <p class="lead">Findable Web Design builds clean websites for established local businesses that have relied on word of mouth, Google listings, Facebook pages, or phone calls for too long.</p>
-        <div class="price">$497 launch <span>No setup fee</span></div>
+        <p class="eyebrow">Website launches for old-school local businesses</p>
+        <h1>Give customers a real front door online.</h1>
+        <p class="lead">Findable builds polished, practical websites for businesses that already have customers, reviews, and phone calls, but still do not have a place online that feels trustworthy.</p>
         <div class="actions">
           <a class="cta" href="https://buy.stripe.com/eVqaEYgpf30rfzscFDgnK00">Pay $497 And Start</a>
-          <a class="cta secondary" href="mailto:hello@findablewebdesign.com">Email Findable</a>
+          <a class="cta secondary" href="mailto:hello@findablewebdesign.com">Ask A Question</a>
+        </div>
+        <div class="launch-line">
+          <span class="pill">$497 launch</span>
+          <span class="pill">No setup fee</span>
+          <span class="pill">Preview before publishing</span>
         </div>
       </div>
-      <div class="hero-card">
-        <h3>A better front door than “just Google us.”</h3>
-        <p>Google can show a listing, but a real website gives customers somewhere to land, understand the business, and take the next step with confidence.</p>
-        <ol>
-          <li>A working website preview for their business.</li>
-          <li>Launch setup with confirmed phone, address, hours, services, and appointment/contact path.</li>
-          <li>Domain guidance if they need a new domain.</li>
-        </ol>
-        <div class="proof-row">
-          <div class="proof"><b>$497</b><span>basic launch</span></div>
-          <div class="proof"><b>1 page</b><span>clean starting site</span></div>
-          <div class="proof"><b>Fast</b><span>preview-first process</span></div>
+      <div class="stage" aria-label="Website preview examples">
+        <div class="browser big">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="mock">
+            <div class="mock-hero">
+              <b>LIVE WEBSITE PREVIEW</b>
+              <strong>Hours, services, calls, and booking in one clean place.</strong>
+            </div>
+            <div class="mock-row">
+              <div class="tile"><span></span><span></span></div>
+              <div class="tile"><span></span><span></span></div>
+              <div class="tile"><span></span><span></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="browser small">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <div class="phone-screen">
+            <div class="line" style="width:70%"></div>
+            <div class="block"></div>
+            <div class="line" style="width:88%"></div>
+            <div class="line" style="width:56%"></div>
+            <div class="button"></div>
+          </div>
         </div>
       </div>
     </header>
 
     <section>
-      <h2>How It Works</h2>
+      <h2>Not fancy. Just finally findable.</h2>
+      <p class="section-lead">Most customers do not need a complicated website. They need to know the business is real, understand what it does, and see the next step without hunting through scattered listings.</p>
       <div class="grid">
-        <div class="box"><strong>1. Preview</strong><p>We show a private working preview with the business name, services, phone, address, and booking/contact path.</p></div>
-        <div class="box"><strong>2. Confirm</strong><p>The business confirms details, hours, services, photos, and any corrections before launch.</p></div>
-        <div class="box"><strong>3. Launch</strong><p>We publish the website and help connect a domain if the business wants one.</p></div>
+        <div class="box"><strong>Shows up cleanly</strong><p>A real web page gives Google searchers somewhere better to land than a bare listing, old Facebook page, or disconnected review profile.</p></div>
+        <div class="box"><strong>Answers fast</strong><p>Phone, address, hours, services, photos, and appointment/contact path sit in one calm, mobile-friendly layout.</p></div>
+        <div class="box"><strong>Launches without drama</strong><p>The business confirms the basics, we clean up the preview, then publish and connect the domain path.</p></div>
       </div>
     </section>
 
-    <section class="band offer">
+    <section class="proof-band">
+      <div class="proof-panel">
+        <h2>A better front door than “just Google us.”</h2>
+        <p>Google can show that a business exists. A website makes it feel current, organized, and worth calling.</p>
+        <div class="metric">
+          <div><b>$497</b><span>base launch</span></div>
+          <div><b>1 page</b><span>clean starting site</span></div>
+          <div><b>Fast</b><span>preview-first process</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="grid" style="grid-template-columns:1fr; margin-top:0;">
+          <div class="box"><strong>1. Preview</strong><p>We create a private working preview around the business name, real contact details, services, and next step.</p></div>
+          <div class="box"><strong>2. Confirm</strong><p>The business corrects hours, services, photos, booking preference, and any wording before launch.</p></div>
+          <div class="box"><strong>3. Publish</strong><p>We launch the site and help connect a domain if the business wants one.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer">
       <div>
         <h2>Findable Website Launch Package</h2>
         <p>The $497 package is for a basic small-business website launch. It is designed for local service businesses that need a clean web presence, accurate contact information, and an easy path for customers to call, message, or request an appointment.</p>
