@@ -1,12 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#10161a"/>
-  <path d="M0 0h1200v630H0z" fill="#10161a"/>
-  <circle cx="960" cy="130" r="260" fill="#34c6b3" opacity=".18"/>
-  <circle cx="150" cy="560" r="260" fill="#f0b84f" opacity=".16"/>
-  <rect x="82" y="72" width="1036" height="486" rx="44" fill="#f6efe2"/>
-  <text x="130" y="238" fill="#10161a" font-family="Georgia, 'Times New Roman', serif" font-size="120" font-weight="700">Be Seen.</text>
-  <text x="136" y="322" fill="#243036" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700">Launch-ready websites for local businesses</text>
-  <text x="136" y="390" fill="#556066" font-family="Arial, Helvetica, sans-serif" font-size="30">One clear page customers can trust and use.</text>
-  <rect x="136" y="444" width="314" height="66" rx="18" fill="#f06449"/>
-  <text x="168" y="488" fill="#1b1110" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800">$497 base launch</text>
+  <rect width="1200" height="630" fill="#070605"/>
+  <circle cx="940" cy="145" r="270" fill="#ffd239" opacity=".13"/>
+  <circle cx="150" cy="560" r="260" fill="#b56a3d" opacity=".16"/>
+  <rect x="82" y="72" width="1036" height="486" rx="44" fill="#0c0907" stroke="#ffd239" stroke-opacity=".28"/>
+  <text x="130" y="206" fill="#ffd239" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="800" letter-spacing="8">THE FRONT DOOR ONLINE</text>
+  <text x="130" y="348" fill="#fff7e8" font-family="Georgia, 'Times New Roman', serif" font-size="136" font-weight="700">Be Seen.</text>
+  <text x="136" y="424" fill="#d8cfc0" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">Launch-ready websites for local businesses</text>
+  <rect x="136" y="472" width="314" height="66" rx="33" fill="#ffd239"/>
+  <text x="168" y="516" fill="#16110a" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="800">$497 base launch</text>
 </svg>
