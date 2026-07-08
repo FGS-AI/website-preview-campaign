@@ -276,6 +276,17 @@
     .checkout { border-radius:20px; background:#f6efe2; color:#172126; padding:24px; border:1px solid rgba(255,255,255,.34); }
     .checkout p { color:#3e4a4f; }
     .checkout .cta { width:100%; margin-top:12px; color:#1b1110; }
+    .quick-request { display:grid; gap:10px; margin:16px 0; }
+    .quick-request label { font-size:13px; font-weight:950; color:#2f3b40; }
+    .quick-request input, .quick-request textarea {
+      width:100%; border:1px solid #d6ccba; border-radius:12px; padding:12px 13px;
+      background:#fffaf0; color:#172126; font:inherit;
+    }
+    .quick-request textarea { min-height:84px; resize:vertical; }
+    .quick-request button {
+      min-height:48px; border:0; border-radius:14px; background:#172126; color:#fff7e8;
+      font:inherit; font-weight:950; cursor:pointer;
+    }
     .checklist { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:18px; }
     .checkitem { border-radius:16px; border:1px solid rgba(246,239,226,.14); background:rgba(255,247,232,.06); padding:14px 16px; }
     .checkitem strong { display:block; color:#fff7e8; margin-bottom:4px; }
@@ -329,7 +340,7 @@
       </a>
       <div class="navlinks">
         <a href="#why">Why it works</a>
-        <a href="#ai-ready">AI-ready</a>
+        <a href="#search-ready">Search-ready</a>
         <a href="#offer">What you get</a>
         <a href="#fit">Good fit</a>
         <span class="navnote">3822 Longmont LLC</span>
@@ -444,11 +455,11 @@
       </div>
     </section>
 
-    <section id="ai-ready">
-      <h2>Built for customers now. Ready for AI next.</h2>
-      <p class="section-lead">The first launch is still a real web page. The next layer is making the business easier for search engines, AI assistants, and booking tools to understand without turning day one into a complicated automation project.</p>
+    <section id="search-ready">
+      <h2>Built for customers now. Search-ready next.</h2>
+      <p class="section-lead">The first launch is still a real web page. The next layer is making the business easier for search engines, maps, and future assistant tools to understand without turning day one into a complicated automation project.</p>
       <div class="grid">
-        <div class="box"><strong>AI-readable business facts</strong><p>Services, service area, hours, contact details, FAQs, and fit notes are written clearly so people and AI tools can understand what the business does.</p></div>
+        <div class="box"><strong>Readable business facts</strong><p>Services, service area, hours, contact details, FAQs, and fit notes are written clearly so people and search tools can understand what the business does.</p></div>
         <div class="box"><strong>Request-ready booking path</strong><p>The base site can point customers to a simple request form, phone call, or existing scheduler instead of promising full automatic booking too early.</p></div>
         <div class="box"><strong>Monthly visibility add-on</strong><p>After launch, Findable can help keep Google Business Profile details, reviews, citations, FAQs, and AI/search visibility notes from drifting stale.</p></div>
       </div>
@@ -492,11 +503,17 @@
       <div>
         <h2>The $497 Customer Front Door Launch</h2>
         <p>The $497 package is a practical one-page launch for a real local business that needs a controlled web presence, accurate contact information, and one easy path for customers to call, message, or request an appointment.</p>
-        <p>Domain registration is separate and billed at cost if a customer needs a new domain. AI-ready visibility work, booking/request upgrades, extra pages, heavier custom edits, marketing campaigns, or ongoing website care can be quoted separately after the launch request.</p>
+        <p>Domain registration is separate and billed at cost if a customer needs a new domain. Search visibility work, booking/request upgrades, extra pages, heavier custom edits, marketing campaigns, or ongoing website care can be quoted separately after the launch request.</p>
       </div>
       <div class="checkout">
         <p class="price">$497</p>
-        <p><strong>Claim the launch.</strong><br>Pay securely, then we confirm details before launch.</p>
+        <p><strong>Request a preview first.</strong><br>Send the basics, or pay securely when ready.</p>
+        <form class="quick-request" action="mailto:troy@fgsfrontrange.com" method="post" enctype="text/plain">
+          <label>Business name<input name="business_name" autocomplete="organization" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>What do you need?<textarea name="request" placeholder="Website launch, preview, domain help, or updates"></textarea></label>
+          <button type="submit">Request A Preview</button>
+        </form>
         <a class="cta" href="https://buy.stripe.com/eVqaEYgpf30rfzscFDgnK00">Start The $497 Launch</a>
         <p class="mini">Secure checkout is handled by Stripe.</p>
       </div>
