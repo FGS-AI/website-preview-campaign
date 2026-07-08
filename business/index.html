@@ -258,6 +258,8 @@
     .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
     .box { border:1px solid var(--line); background:rgba(255,247,232,.08); border-radius:20px; padding:22px; box-shadow:0 18px 40px rgba(0,0,0,.16); }
     .box strong { display:block; margin-bottom:8px; color:var(--ink); font-size:18px; }
+    .visual-proof { display:grid; grid-template-columns:.9fr 1.1fr; gap:24px; align-items:center; margin-top:34px; }
+    .visual-proof img { width:100%; height:auto; border-radius:22px; border:1px solid rgba(246,239,226,.18); box-shadow:var(--shadow); background:#f6efe2; }
     .proof-band { display:grid; grid-template-columns:.95fr 1.05fr; gap:18px; align-items:stretch; margin-top:40px; }
     .proof-panel { border-radius:24px; border:1px solid rgba(240,184,79,.38); padding:30px; background:#f6efe2; color:#141b1f; }
     .proof-panel p { color:#405056; }
@@ -293,7 +295,7 @@
     .mini,.fine { font-size:14px; }
     footer { margin-top:54px; padding-top:24px; border-top:1px solid var(--line); }
     @media (max-width:760px) {
-      .hero,.grid,.proof-band,.offer,.presence-grid,.split-list,.checklist,.microproof { grid-template-columns:1fr; }
+      .hero,.grid,.proof-band,.offer,.presence-grid,.split-list,.checklist,.microproof,.visual-proof { grid-template-columns:1fr; }
       .hero { display:flex; flex-direction:column; min-height:auto; }
       .hero-copy { display:contents; }
       .hero .eyebrow { order:1; }
@@ -434,6 +436,14 @@
         <div class="box"><strong>Answers the first questions fast</strong><p>Services, phone, map, trust signals, and the next action show up before the customer has to hunt.</p></div>
         <div class="box"><strong>Starts from a working preview</strong><p>The business reacts to something real first. That cuts friction and makes the offer easier to buy.</p></div>
       </div>
+    </section>
+
+    <section class="visual-proof">
+      <div>
+        <h2>Show the business before explaining it.</h2>
+        <p class="section-lead">The first job is visual trust. A local business needs one page that looks current, says what they do, and makes the next step obvious.</p>
+      </div>
+      <img src="/assets/findable-og.svg" alt="Findable Web Design launch preview example" loading="lazy">
     </section>
 
     <section class="proof-band">
