@@ -105,75 +105,83 @@
     .tile span:last-child { width:58%; background:#d28c74; }
     .attention-card {
       position:relative; min-height:540px; padding:24px; background:#f6efe2; color:#172126;
-      display:flex; flex-direction:column; justify-content:space-between;
+      display:flex; flex-direction:column; justify-content:space-between; isolation:isolate;
     }
     .attention-card:before {
       content:""; position:absolute; inset:0;
       background:
+        radial-gradient(circle at 50% 52%, rgba(240,184,79,.30), transparent 0 18%, rgba(240,184,79,.10) 19%, transparent 34%),
         linear-gradient(90deg, rgba(23,33,38,.06) 1px, transparent 1px),
         linear-gradient(0deg, rgba(23,33,38,.05) 1px, transparent 1px);
-      background-size:34px 34px; pointer-events:none;
+      background-size:auto, 34px 34px, 34px 34px; pointer-events:none;
     }
-    .attention-head, .seen-target, .attention-note { position:relative; z-index:2; }
-    .attention-head b { display:block; color:#172126; font-size:16px; letter-spacing:.1em; text-transform:uppercase; }
-    .attention-head span { display:block; max-width:310px; margin-top:8px; color:#516067; font-size:15px; line-height:1.45; }
-    .diamond-field { position:absolute; inset:96px 20px 104px; z-index:1; }
+    .attention-card:after {
+      content:""; position:absolute; left:50%; top:53%; width:310px; height:310px; transform:translate(-50%,-50%);
+      border-radius:50%; border:1px solid rgba(17,25,29,.18); box-shadow:0 0 0 22px rgba(52,198,179,.08), inset 0 0 0 18px rgba(255,250,240,.45);
+      animation:lensPulse 3.8s ease-in-out infinite; z-index:1;
+    }
+    .attention-head, .seen-target, .signal-strip { position:relative; z-index:3; }
+    .attention-head b { display:block; color:#172126; font-size:13px; letter-spacing:.16em; text-transform:uppercase; }
+    .attention-head span { display:block; max-width:300px; margin-top:8px; color:#516067; font-size:15px; line-height:1.45; }
+    .diamond-field { position:absolute; inset:92px 18px 104px; z-index:2; }
     .diamond {
-      position:absolute; width:18px; height:18px; background:#11191d; transform:rotate(45deg);
-      opacity:.42; border-radius:3px; box-shadow:0 10px 18px rgba(17,25,29,.18); animation:diamondPull 4.8s ease-in-out infinite;
+      position:absolute; width:17px; height:17px; background:#11191d; transform:rotate(45deg);
+      opacity:.34; border-radius:4px; box-shadow:0 10px 18px rgba(17,25,29,.22); animation:diamondBreathe 5.4s ease-in-out infinite;
     }
-    .diamond:nth-child(1) { left:9%; top:8%; animation-delay:-.2s; }
-    .diamond:nth-child(2) { left:22%; top:31%; animation-delay:-1.1s; }
-    .diamond:nth-child(3) { left:11%; top:67%; animation-delay:-2.4s; }
-    .diamond:nth-child(4) { left:38%; top:17%; animation-delay:-3.1s; }
-    .diamond:nth-child(5) { left:48%; top:78%; animation-delay:-.8s; }
-    .diamond:nth-child(6) { left:64%; top:12%; animation-delay:-1.8s; }
-    .diamond:nth-child(7) { left:78%; top:36%; animation-delay:-3.8s; }
-    .diamond:nth-child(8) { left:86%; top:72%; animation-delay:-2.9s; }
-    .diamond:nth-child(9) { left:31%; top:54%; animation-delay:-4.6s; }
-    .diamond:nth-child(10) { left:68%; top:56%; animation-delay:-5.1s; }
-    .diamond:nth-child(11) { left:18%; top:82%; animation-delay:-3.6s; }
+    .diamond:nth-child(1) { left:7%; top:8%; animation-delay:-.2s; }
+    .diamond:nth-child(2) { left:20%; top:28%; animation-delay:-1.1s; }
+    .diamond:nth-child(3) { left:9%; top:68%; animation-delay:-2.4s; }
+    .diamond:nth-child(4) { left:36%; top:16%; animation-delay:-3.1s; }
+    .diamond:nth-child(5) { left:47%; top:80%; animation-delay:-.8s; }
+    .diamond:nth-child(6) { left:63%; top:10%; animation-delay:-1.8s; }
+    .diamond:nth-child(7) { left:78%; top:33%; animation-delay:-3.8s; }
+    .diamond:nth-child(8) { left:86%; top:73%; animation-delay:-2.9s; }
+    .diamond:nth-child(9) { left:30%; top:55%; animation-delay:-4.6s; }
+    .diamond:nth-child(10) { left:68%; top:57%; animation-delay:-5.1s; }
+    .diamond:nth-child(11) { left:17%; top:83%; animation-delay:-3.6s; }
     .diamond:nth-child(12) { left:91%; top:18%; animation-delay:-.5s; }
-    @keyframes diamondPull {
-      0%, 100% { transform:translate(0,0) rotate(45deg) scale(.88); opacity:.18; }
-      45% { opacity:.34; }
-      62% { transform:translate(var(--pull-x, 0), var(--pull-y, 0)) rotate(45deg) scale(1.12); opacity:.72; }
+    @keyframes diamondBreathe {
+      0%, 100% { transform:rotate(45deg) scale(.78); opacity:.16; }
+      48% { transform:rotate(45deg) scale(1.14); opacity:.58; }
     }
-    .diamond:nth-child(1), .diamond:nth-child(2), .diamond:nth-child(3), .diamond:nth-child(4) { --pull-x:90px; --pull-y:118px; }
-    .diamond:nth-child(5), .diamond:nth-child(9), .diamond:nth-child(11) { --pull-x:50px; --pull-y:-62px; }
-    .diamond:nth-child(6), .diamond:nth-child(7), .diamond:nth-child(8), .diamond:nth-child(10), .diamond:nth-child(12) { --pull-x:-82px; --pull-y:82px; }
-    .flow-field { position:absolute; inset:86px 18px 92px; z-index:1; pointer-events:none; }
+    .flow-field { position:absolute; inset:76px 10px 86px; z-index:2; pointer-events:none; }
     .flow-line {
-      position:absolute; inset:auto; width:46%; height:42%; border:2px solid rgba(17,25,29,.18);
-      border-left:0; border-bottom:0; border-radius:0 90% 0 0; filter:blur(.1px);
+      position:absolute; width:45%; height:42%; border:2px solid rgba(17,25,29,.20);
+      border-left:0; border-bottom:0; border-radius:0 100% 0 0; opacity:.85;
     }
-    .flow-line.one { left:2%; top:8%; transform:rotate(8deg); }
-    .flow-line.two { right:4%; top:10%; transform:scaleX(-1) rotate(12deg); }
-    .flow-line.three { left:14%; bottom:4%; transform:rotate(-18deg); }
+    .flow-line.one { left:3%; top:7%; transform:rotate(12deg); }
+    .flow-line.two { right:4%; top:9%; transform:scaleX(-1) rotate(14deg); }
+    .flow-line.three { left:15%; bottom:4%; transform:rotate(-20deg); }
+    .flow-line.four { right:17%; bottom:8%; transform:scaleX(-1) rotate(-18deg); }
     .flow-diamond {
-      position:absolute; left:0; top:0; width:20px; height:20px; border-radius:4px; background:#11191d;
-      box-shadow:0 12px 24px rgba(17,25,29,.26); offset-rotate:45deg; animation:flowToSeen 3.8s cubic-bezier(.45,0,.2,1) infinite;
+      position:absolute; left:0; top:0; width:22px; height:22px; border-radius:5px; background:#11191d;
+      box-shadow:0 14px 28px rgba(17,25,29,.32); offset-rotate:45deg; animation:flowToDoor 4.2s cubic-bezier(.55,0,.15,1) infinite;
     }
-    .flow-diamond.one { offset-path:path("M 18 30 C 92 42, 134 110, 178 178"); animation-delay:-.2s; }
-    .flow-diamond.two { offset-path:path("M 312 18 C 252 52, 228 102, 190 178"); animation-delay:-1.1s; }
-    .flow-diamond.three { offset-path:path("M 26 330 C 80 260, 124 220, 178 180"); animation-delay:-2s; }
-    .flow-diamond.four { offset-path:path("M 330 320 C 272 256, 238 220, 190 180"); animation-delay:-2.7s; }
-    .flow-diamond.five { offset-path:path("M 172 18 C 150 74, 154 126, 180 178"); animation-delay:-3.2s; }
-    @keyframes flowToSeen {
-      0% { offset-distance:0%; opacity:0; transform:scale(.72); }
-      12% { opacity:.88; }
-      68% { opacity:.95; transform:scale(1.08); }
-      100% { offset-distance:100%; opacity:0; transform:scale(.5); }
+    .flow-diamond.one { offset-path:path("M 12 32 C 88 44, 126 126, 184 206"); animation-delay:-.2s; }
+    .flow-diamond.two { offset-path:path("M 356 28 C 288 58, 246 126, 192 206"); animation-delay:-1.1s; }
+    .flow-diamond.three { offset-path:path("M 22 372 C 90 292, 138 248, 184 208"); animation-delay:-2s; }
+    .flow-diamond.four { offset-path:path("M 354 364 C 282 288, 238 248, 192 208"); animation-delay:-2.8s; }
+    .flow-diamond.five { offset-path:path("M 184 8 C 154 82, 158 140, 188 206"); animation-delay:-3.4s; }
+    @keyframes flowToDoor {
+      0% { offset-distance:0%; opacity:0; transform:scale(.68); }
+      10% { opacity:.92; }
+      62% { opacity:1; transform:scale(1.12); }
+      100% { offset-distance:100%; opacity:0; transform:scale(.44); }
+    }
+    @keyframes lensPulse {
+      0%, 100% { opacity:.62; transform:translate(-50%,-50%) scale(.96); }
+      50% { opacity:1; transform:translate(-50%,-50%) scale(1.03); }
     }
     .seen-target {
-      position:absolute; left:50%; top:50%; width:min(78%,340px); transform:translate(-50%,-50%);
-      border-radius:24px; padding:28px; background:#10161a; color:#fff7e8;
-      box-shadow:0 0 0 8px rgba(17,25,29,.08), 0 30px 70px rgba(16,22,26,.36); border:1px solid rgba(255,247,232,.12); text-align:center;
+      position:absolute; left:50%; top:53%; width:min(76%,320px); transform:translate(-50%,-50%);
+      border-radius:28px; padding:28px; background:#10161a; color:#fff7e8;
+      box-shadow:0 0 0 8px rgba(17,25,29,.08), 0 34px 76px rgba(16,22,26,.42); border:1px solid rgba(255,247,232,.14); text-align:center; z-index:4;
     }
     .seen-target small { display:block; color:#f0b84f; font-size:12px; font-weight:950; letter-spacing:.16em; text-transform:uppercase; margin-bottom:10px; }
-    .seen-target strong { display:block; font-family:"Fraunces", Georgia, serif; font-size:clamp(44px,5vw,70px); line-height:.9; letter-spacing:-.03em; }
+    .seen-target strong { display:block; font-family:"Fraunces", Georgia, serif; font-size:clamp(30px,3.2vw,44px); line-height:.94; letter-spacing:-.02em; }
     .seen-target span { display:block; margin-top:12px; color:#c7d5d0; font-size:15px; line-height:1.45; }
-    .attention-note { border-radius:18px; background:#fffaf0; padding:16px; color:#344148; font-size:14px; line-height:1.45; }
+    .signal-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .signal-strip span { min-height:42px; display:flex; align-items:center; justify-content:center; border-radius:999px; background:#fffaf0; color:#344148; font-size:12px; font-weight:950; letter-spacing:.08em; text-transform:uppercase; }
     .phone-card { background:#10161a; color:#fff; min-height:640px; display:flex; flex-direction:column; }
     .phone-screen { padding:18px; }
     .phone-head { padding:20px 22px 6px; }
@@ -286,10 +294,10 @@
         <div class="presence-map">
           <div class="presence-grid">
             <div>
-              <div class="attention-card" aria-label="Animation showing scattered customer attention becoming visible">
+              <div class="attention-card" aria-label="Animation showing scattered customer attention becoming a clear customer front door">
               <div class="attention-head">
                 <b>Scattered attention</b>
-                <span>Searches, referrals, reviews, and calls need one place to land.</span>
+                <span>Searches, referrals, reviews, and calls need one clear place to land.</span>
                 </div>
                 <div class="diamond-field" aria-hidden="true">
                   <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
@@ -297,16 +305,16 @@
                   <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
                 </div>
                 <div class="flow-field" aria-hidden="true">
-                  <span class="flow-line one"></span><span class="flow-line two"></span><span class="flow-line three"></span>
+                  <span class="flow-line one"></span><span class="flow-line two"></span><span class="flow-line three"></span><span class="flow-line four"></span>
                   <span class="flow-diamond one"></span><span class="flow-diamond two"></span><span class="flow-diamond three"></span>
                   <span class="flow-diamond four"></span><span class="flow-diamond five"></span>
                 </div>
                 <div class="seen-target">
                 <small>Findable goal</small>
-                <strong>Be Seen.</strong>
-                <span>One page customers can understand, trust, and use.</span>
+                <strong>One customer front door</strong>
+                <span>A page people can understand, trust, and use.</span>
                 </div>
-                <div class="attention-note">Simple motion with a job: pull attention toward the message.</div>
+                <div class="signal-strip"><span>Search</span><span>Call</span><span>Trust</span></div>
               </div>
             </div>
             <div>
