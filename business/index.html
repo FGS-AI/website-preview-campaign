@@ -43,20 +43,20 @@
     .hero {
       min-height:calc(100vh - 64px);
       display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(450px,.92fr);
-      gap:46px;
+      grid-template-columns:minmax(0,.95fr) minmax(320px,.8fr);
+      gap:28px;
       align-items:start;
       padding:26px 0 40px;
     }
-    .hero-copy { padding-top:20px; }
+    .hero-copy { padding-top:12px; }
     .eyebrow { margin:0 0 16px; color:var(--gold); font-size:13px; font-weight:950; letter-spacing:1.8px; text-transform:uppercase; }
-    h1 { margin:0; max-width:760px; font-family:"Fraunces", Georgia, serif; font-size:clamp(54px,7.2vw,92px); line-height:.93; letter-spacing:-.03em; }
-    .lead { margin:22px 0 0; max-width:660px; font-size:21px; line-height:1.55; color:#d5ded9; }
-    .microproof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:28px; max-width:720px; }
+    h1 { margin:0; max-width:760px; font-family:"Fraunces", Georgia, serif; font-size:clamp(48px,6.2vw,84px); line-height:.93; letter-spacing:-.03em; }
+    .lead { margin:20px 0 0; max-width:640px; font-size:19px; line-height:1.52; color:#d5ded9; }
+    .microproof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:22px; max-width:700px; }
     .microproof div { border:1px solid rgba(246,239,226,.16); border-radius:14px; background:rgba(255,247,232,.07); padding:14px 16px; }
     .microproof b { display:block; color:#fff7e8; font-size:15px; margin-bottom:4px; }
     .microproof span { color:var(--muted); font-size:14px; line-height:1.4; }
-    .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:28px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:22px; }
     .cta {
       display:inline-flex; justify-content:center; align-items:center; min-height:52px; padding:15px 22px;
       border-radius:14px; background:var(--coral); color:#1b1110; text-decoration:none; font-weight:950;
@@ -65,9 +65,9 @@
     .cta.secondary { background:transparent; color:var(--ink); border:1px solid rgba(246,239,226,.34); box-shadow:none; }
     .launch-line { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
     .pill { display:inline-flex; align-items:center; min-height:36px; padding:8px 12px; border:1px solid rgba(246,239,226,.22); border-radius:999px; background:rgba(255,247,232,.08); color:#f6efe2; font-weight:900; font-size:14px; }
-    .stage { position:relative; min-height:660px; }
+    .stage { position:relative; min-height:560px; }
     .presence-map {
-      position:relative; min-height:640px; border:1px solid rgba(246,239,226,.18);
+      position:relative; min-height:540px; border:1px solid rgba(246,239,226,.18);
       border-radius:28px; background:linear-gradient(180deg, rgba(255,247,232,.08), rgba(255,247,232,.03));
       box-shadow:var(--shadow); overflow:hidden; padding:26px;
     }
@@ -78,18 +78,18 @@
         radial-gradient(circle at bottom right, rgba(52,198,179,.16), transparent 28%);
       pointer-events:none;
     }
-    .presence-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .95fr; gap:18px; }
+    .presence-grid { position:relative; z-index:1; display:grid; grid-template-columns:1fr; gap:18px; }
     .visual-card, .search-card, .phone-card, .result-card, .attention-card {
       border-radius:22px; overflow:hidden; border:1px solid rgba(24,33,38,.12); box-shadow:0 22px 50px rgba(0,0,0,.18);
     }
-    .search-card { background:var(--card); color:#1e2529; min-height:220px; }
+    .search-card { background:var(--card); color:#1e2529; min-height:180px; }
     .search-bar { display:flex; gap:8px; align-items:center; height:50px; padding:0 16px; border-bottom:1px solid #d9d1c5; color:#556066; font-weight:800; }
     .search-body { padding:18px; }
     .search-line { height:12px; border-radius:12px; background:#d8d1c7; margin-bottom:14px; }
     .search-line.short { width:58%; }
     .warning { margin-top:18px; padding:16px; border-radius:16px; background:#ffffff; border-left:6px solid var(--coral); font-weight:950; }
     .warning span { display:block; margin-top:8px; color:#667077; font-size:14px; font-weight:800; line-height:1.45; }
-    .result-card { background:#fff7e8; color:#172126; min-height:390px; }
+    .result-card { background:#fff7e8; color:#172126; min-height:300px; }
     .topbar { height:42px; display:flex; align-items:center; gap:8px; padding:0 15px; background:#efe6d6; border-bottom:1px solid #d8cdbb; }
     .dot { width:9px; height:9px; border-radius:50%; background:var(--coral); }
     .dot:nth-child(2) { background:var(--gold); }
@@ -98,13 +98,13 @@
     .site-hero b { display:block; margin-bottom:18px; color:#bdece5; font-size:12px; letter-spacing:1px; }
     .site-hero strong { display:block; max-width:280px; font-family:"Fraunces", Georgia, serif; font-size:34px; line-height:1; }
     .site-hero span { display:block; margin-top:12px; max-width:320px; color:#d9efea; font-size:15px; line-height:1.45; }
-    .site-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:0 18px 18px; }
-    .tile { min-height:108px; padding:14px; border-radius:18px; background:#ede4d4; }
+    .site-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:0 18px 18px; }
+    .tile { min-height:76px; padding:12px; border-radius:18px; background:#ede4d4; }
     .tile b { display:block; font-size:13px; color:#263238; margin-bottom:12px; letter-spacing:.04em; text-transform:uppercase; }
     .tile span { display:block; height:8px; border-radius:8px; background:#91aaa4; margin-bottom:9px; }
     .tile span:last-child { width:58%; background:#d28c74; }
     .attention-card {
-      position:relative; min-height:640px; padding:26px; background:#f6efe2; color:#172126;
+      position:relative; min-height:540px; padding:24px; background:#f6efe2; color:#172126;
       display:flex; flex-direction:column; justify-content:space-between;
     }
     .attention-card:before {
@@ -117,7 +117,7 @@
     .attention-head, .seen-target, .attention-note { position:relative; z-index:2; }
     .attention-head b { display:block; color:#172126; font-size:16px; letter-spacing:.1em; text-transform:uppercase; }
     .attention-head span { display:block; max-width:310px; margin-top:8px; color:#516067; font-size:15px; line-height:1.45; }
-    .diamond-field { position:absolute; inset:108px 20px 118px; z-index:1; }
+    .diamond-field { position:absolute; inset:96px 20px 104px; z-index:1; }
     .diamond {
       position:absolute; width:11px; height:11px; background:#11191d; transform:rotate(45deg);
       opacity:.22; border-radius:2px; animation:diamondPull 5.8s ease-in-out infinite;
@@ -195,7 +195,7 @@
     .checkitem strong { display:block; color:#fff7e8; margin-bottom:4px; }
     .mini,.fine { font-size:14px; }
     footer { margin-top:54px; padding-top:24px; border-top:1px solid var(--line); }
-    @media (max-width:980px) {
+    @media (max-width:760px) {
       .hero,.grid,.proof-band,.offer,.presence-grid,.split-list,.checklist,.microproof { grid-template-columns:1fr; }
       .hero { min-height:auto; }
       .stage { min-height:auto; }
@@ -263,6 +263,25 @@
         <div class="presence-map">
           <div class="presence-grid">
             <div>
+              <div class="attention-card" aria-label="Animation showing scattered customer attention becoming visible">
+                <div class="attention-head">
+                  <b>Scattered attention</b>
+                  <span>Searches, referrals, calls, and reviews are floating around. Without a real page, customers have nowhere clear to land.</span>
+                </div>
+                <div class="diamond-field" aria-hidden="true">
+                  <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
+                  <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
+                  <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
+                </div>
+                <div class="seen-target">
+                  <small>Findable goal</small>
+                  <strong>Be Seen.</strong>
+                  <span>One controlled page gives customers and search tools a clear place to understand and choose the business.</span>
+                </div>
+                <div class="attention-note">Simple motion with a job: pull attention toward the message.</div>
+              </div>
+            </div>
+            <div>
               <div class="search-card">
                 <div class="search-bar">Search: your business near me</div>
                 <div class="search-body">
@@ -287,23 +306,6 @@
                   <div class="tile"><b>Call or book</b><span></span><span></span></div>
                 </div>
               </div>
-            </div>
-            <div class="attention-card" aria-label="Animation showing scattered customer attention becoming visible">
-              <div class="attention-head">
-                <b>Scattered attention</b>
-                <span>Searches, referrals, calls, and reviews are floating around. Without a real page, customers have nowhere clear to land.</span>
-              </div>
-              <div class="diamond-field" aria-hidden="true">
-                <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
-                <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
-                <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
-              </div>
-              <div class="seen-target">
-                <small>Findable goal</small>
-                <strong>Be Seen.</strong>
-                <span>One controlled page gives customers and search tools a clear place to understand and choose the business.</span>
-              </div>
-              <div class="attention-note">The motion is simple on purpose: not a tech show-off, just a visual way to show invisible businesses becoming easier to find.</div>
             </div>
           </div>
           <div class="stamp">From scattered attention to one page customers can trust and use.</div>
