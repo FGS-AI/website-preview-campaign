@@ -13,6 +13,6 @@
   <circle cx="92" cy="52" r="15.5" fill="none" stroke="#1f2428" stroke-width="9"/>
   <path d="M104 64l18 18" stroke="#1f2428" stroke-width="10" stroke-linecap="round"/>
   <path d="M79 83h5" stroke="#fff8f2" stroke-width="4" stroke-linecap="round"/>
-  <text x="160" y="84" fill="#1f2428" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800" letter-spacing="0">Findable</text>
-  <text x="164" y="113" fill="#56616b" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="3">WEB DESIGN</text>
+  <text x="160" y="82" fill="#1f2428" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700" letter-spacing="0">Findable</text>
+  <text x="164" y="114" fill="#56616b" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="800" letter-spacing="4">WEB DESIGN</text>
 </svg>

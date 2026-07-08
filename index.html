@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Findable Web Design | Small Business Website Launch Services</title>
-  <meta name="description" content="Findable Web Design builds affordable launch-ready websites for established local businesses that need customers to find, trust, and contact them online.">
+  <title>Findable Web Design | Launch-Ready Websites For Local Businesses</title>
+  <meta name="description" content="Findable Web Design builds launch-ready websites for local businesses people already search for, helping them replace scattered listings with one clear page customers can trust and use.">
   <link rel="icon" href="/assets/findable-mark-v1.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       color-scheme: dark;
       --ink:#f6efe2; --muted:#b9c6c2; --deep:#10161a; --panel:#172126; --line:rgba(246,239,226,.18);
       --teal:#34c6b3; --teal-dark:#08776f; --coral:#f06449; --gold:#f0b84f; --plum:#8b4f66;
-      --paper:#fff7e8; --shadow:0 28px 80px rgba(0,0,0,.34);
+      --paper:#fff7e8; --shadow:0 28px 80px rgba(0,0,0,.34); --card:#f7efdf; --ink-dark:#182126;
     }
     * { box-sizing:border-box; }
     html { background:var(--deep); }
     body {
       margin:0;
-      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:"Manrope", ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color:var(--ink);
       background:
         linear-gradient(120deg, rgba(240,184,79,.12) 0 1px, transparent 1px 70px),
@@ -27,123 +30,146 @@
     }
     a { color:var(--teal); font-weight:900; }
     main { position:relative; }
-    .shell { width:min(1180px, calc(100% - 36px)); margin:0 auto; padding:22px 0 64px; }
-    nav { display:flex; justify-content:space-between; gap:18px; align-items:center; padding:8px 0 26px; }
-    .brand { display:inline-flex; align-items:center; padding:8px 10px; border:1px solid rgba(246,239,226,.28); border-radius:8px; background:#fff7e8; box-shadow:0 16px 34px rgba(0,0,0,.22); }
-    .brand img { display:block; width:198px; height:auto; }
+    .shell { width:min(1200px, calc(100% - 40px)); margin:0 auto; padding:24px 0 72px; }
+    nav { display:flex; justify-content:space-between; gap:24px; align-items:center; padding:8px 0 30px; }
+    .brand { display:inline-flex; align-items:center; gap:16px; padding:12px 16px; border:1px solid rgba(246,239,226,.24); border-radius:18px; background:rgba(255,247,232,.95); box-shadow:0 18px 40px rgba(0,0,0,.24); text-decoration:none; }
+    .brand img { display:block; width:252px; height:auto; }
+    .brand-copy { display:flex; flex-direction:column; gap:3px; color:var(--ink-dark); }
+    .brand-copy strong { font-size:14px; letter-spacing:.18em; text-transform:uppercase; }
+    .brand-copy span { font-size:14px; color:#546068; max-width:190px; }
+    .navlinks { display:flex; align-items:center; gap:18px; }
+    .navlinks a { text-decoration:none; color:var(--ink); font-size:14px; }
     .navnote { font-size:13px; color:var(--muted); text-align:right; white-space:nowrap; }
     .hero {
-      min-height:calc(100vh - 52px);
+      min-height:calc(100vh - 64px);
       display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(430px,.9fr);
-      gap:42px;
-      align-items:center;
-      padding:20px 0 54px;
+      grid-template-columns:minmax(0,1fr) minmax(450px,.92fr);
+      gap:46px;
+      align-items:start;
+      padding:26px 0 40px;
     }
+    .hero-copy { padding-top:20px; }
     .eyebrow { margin:0 0 16px; color:var(--gold); font-size:13px; font-weight:950; letter-spacing:1.8px; text-transform:uppercase; }
-    h1 { margin:0; max-width:790px; font-size:clamp(50px,7.4vw,96px); line-height:.93; letter-spacing:0; }
-    .lead { margin:24px 0 0; max-width:660px; font-size:21px; line-height:1.5; color:#d5ded9; }
+    h1 { margin:0; max-width:760px; font-family:"Fraunces", Georgia, serif; font-size:clamp(54px,7.2vw,92px); line-height:.93; letter-spacing:-.03em; }
+    .lead { margin:22px 0 0; max-width:660px; font-size:21px; line-height:1.55; color:#d5ded9; }
+    .microproof { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:28px; max-width:720px; }
+    .microproof div { border:1px solid rgba(246,239,226,.16); border-radius:14px; background:rgba(255,247,232,.07); padding:14px 16px; }
+    .microproof b { display:block; color:#fff7e8; font-size:15px; margin-bottom:4px; }
+    .microproof span { color:var(--muted); font-size:14px; line-height:1.4; }
     .actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:28px; }
     .cta {
       display:inline-flex; justify-content:center; align-items:center; min-height:52px; padding:15px 22px;
-      border-radius:8px; background:var(--coral); color:#1b1110; text-decoration:none; font-weight:950;
+      border-radius:14px; background:var(--coral); color:#1b1110; text-decoration:none; font-weight:950;
       box-shadow:0 18px 36px rgba(240,100,73,.28);
     }
     .cta.secondary { background:transparent; color:var(--ink); border:1px solid rgba(246,239,226,.34); box-shadow:none; }
     .launch-line { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
-    .pill { display:inline-flex; align-items:center; min-height:36px; padding:8px 12px; border:1px solid rgba(246,239,226,.22); border-radius:8px; background:rgba(255,247,232,.08); color:#f6efe2; font-weight:900; font-size:14px; }
-    .stage { position:relative; min-height:620px; perspective:1200px; }
+    .pill { display:inline-flex; align-items:center; min-height:36px; padding:8px 12px; border:1px solid rgba(246,239,226,.22); border-radius:999px; background:rgba(255,247,232,.08); color:#f6efe2; font-weight:900; font-size:14px; }
+    .stage { position:relative; min-height:660px; }
     .presence-map {
-      position:absolute; inset:10px 0 auto auto; width:96%; min-height:590px; border:1px solid rgba(246,239,226,.2);
-      border-radius:8px; background:rgba(255,247,232,.07); box-shadow:var(--shadow); overflow:hidden;
+      position:relative; min-height:640px; border:1px solid rgba(246,239,226,.18);
+      border-radius:28px; background:linear-gradient(180deg, rgba(255,247,232,.08), rgba(255,247,232,.03));
+      box-shadow:var(--shadow); overflow:hidden; padding:26px;
     }
     .presence-map:before {
       content:""; position:absolute; inset:0;
       background:
-        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(255,255,255,.05) 1px, transparent 1px);
-      background-size:42px 42px; opacity:.7;
+        radial-gradient(circle at top left, rgba(240,184,79,.16), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(52,198,179,.16), transparent 28%);
+      pointer-events:none;
     }
-    .missing-card,.found-card,.phone-card {
-      position:absolute; border-radius:8px; border:1px solid rgba(246,239,226,.22); box-shadow:0 24px 60px rgba(0,0,0,.34);
-      overflow:hidden;
+    .presence-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .95fr; gap:18px; }
+    .visual-card, .search-card, .phone-card, .result-card {
+      border-radius:22px; overflow:hidden; border:1px solid rgba(24,33,38,.12); box-shadow:0 22px 50px rgba(0,0,0,.18);
     }
-    .missing-card {
-      left:24px; top:36px; width:50%; min-height:245px; background:#f9f2e7; color:#1e2529; transform:rotate(-3deg);
-    }
-    .search-bar { display:flex; gap:8px; align-items:center; height:44px; padding:0 14px; border-bottom:1px solid #d9d1c5; color:#5a6469; font-weight:800; }
-    .search-line { height:12px; border-radius:12px; background:#d8d1c7; margin:18px; }
-    .search-line.short { width:56%; }
-    .warning { margin:18px; padding:14px; border-left:5px solid var(--coral); background:#fff; font-weight:950; }
-    .warning span { display:block; margin-top:8px; color:#667077; font-size:14px; font-weight:800; }
-    .found-card {
-      right:42px; top:126px; width:62%; min-height:390px; background:#fff7e8; color:#172126; transform:rotate(2deg);
-    }
-    .topbar { height:38px; display:flex; align-items:center; gap:8px; padding:0 13px; background:#efe6d6; border-bottom:1px solid #d8cdbb; }
+    .search-card { background:var(--card); color:#1e2529; min-height:220px; }
+    .search-bar { display:flex; gap:8px; align-items:center; height:50px; padding:0 16px; border-bottom:1px solid #d9d1c5; color:#556066; font-weight:800; }
+    .search-body { padding:18px; }
+    .search-line { height:12px; border-radius:12px; background:#d8d1c7; margin-bottom:14px; }
+    .search-line.short { width:58%; }
+    .warning { margin-top:18px; padding:16px; border-radius:16px; background:#ffffff; border-left:6px solid var(--coral); font-weight:950; }
+    .warning span { display:block; margin-top:8px; color:#667077; font-size:14px; font-weight:800; line-height:1.45; }
+    .result-card { background:#fff7e8; color:#172126; min-height:390px; }
+    .topbar { height:42px; display:flex; align-items:center; gap:8px; padding:0 15px; background:#efe6d6; border-bottom:1px solid #d8cdbb; }
     .dot { width:9px; height:9px; border-radius:50%; background:var(--coral); }
     .dot:nth-child(2) { background:var(--gold); }
     .dot:nth-child(3) { background:var(--teal-dark); }
-    .site-hero { margin:18px; padding:22px; border-radius:8px; background:linear-gradient(135deg,#0d6d65,#15343b 58%,#8b4f66); color:white; }
-    .site-hero b { display:block; margin-bottom:58px; color:#bdece5; font-size:12px; letter-spacing:1px; }
-    .site-hero strong { display:block; max-width:255px; font-size:30px; line-height:1; }
-    .site-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:0 18px 18px; }
-    .tile { min-height:86px; padding:12px; border-radius:8px; background:#ede4d4; }
+    .site-hero { margin:18px; padding:24px; border-radius:22px; background:linear-gradient(135deg,#0d6d65,#15343b 58%,#8b4f66); color:white; }
+    .site-hero b { display:block; margin-bottom:18px; color:#bdece5; font-size:12px; letter-spacing:1px; }
+    .site-hero strong { display:block; max-width:280px; font-family:"Fraunces", Georgia, serif; font-size:34px; line-height:1; }
+    .site-hero span { display:block; margin-top:12px; max-width:320px; color:#d9efea; font-size:15px; line-height:1.45; }
+    .site-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:0 18px 18px; }
+    .tile { min-height:108px; padding:14px; border-radius:18px; background:#ede4d4; }
+    .tile b { display:block; font-size:13px; color:#263238; margin-bottom:12px; letter-spacing:.04em; text-transform:uppercase; }
     .tile span { display:block; height:8px; border-radius:8px; background:#91aaa4; margin-bottom:9px; }
     .tile span:last-child { width:58%; background:#d28c74; }
-    .phone-card { display:none; }
+    .phone-card { background:#10161a; color:#fff; min-height:640px; display:flex; flex-direction:column; }
     .phone-screen { padding:18px; }
-    .phone-screen .line { height:8px; border-radius:8px; background:#77aaa2; margin:10px 0; }
-    .phone-screen .photo { height:76px; border-radius:8px; background:#f4d7d2; margin:16px 0; }
-    .phone-screen .button { height:38px; border-radius:8px; background:var(--gold); margin-top:18px; }
+    .phone-head { padding:20px 22px 6px; }
+    .phone-head b { display:block; color:#fff7e8; font-size:16px; }
+    .phone-head span { display:block; margin-top:6px; color:#9eb2ab; font-size:14px; line-height:1.45; }
+    .phone-screen .line { height:10px; border-radius:12px; background:#335f5c; margin:12px 0; }
+    .phone-screen .photo { height:150px; border-radius:18px; background:linear-gradient(135deg,#f4d7d2,#d5987e); margin:18px 0; }
+    .phone-screen .button { height:44px; border-radius:14px; background:var(--gold); margin-top:18px; }
+    .phone-screen .button.alt { background:#1e2d33; border:1px solid rgba(246,239,226,.14); }
     .stamp {
-      position:absolute; left:26px; bottom:34px; max-width:235px; padding:16px; border-radius:8px;
-      background:#10161a; border:1px solid rgba(246,239,226,.24); color:#f6efe2; font-weight:950; transform:rotate(-2deg);
+      position:absolute; left:26px; bottom:24px; max-width:250px; padding:16px 18px; border-radius:18px;
+      background:#10161a; border:1px solid rgba(246,239,226,.24); color:#f6efe2; font-weight:950;
     }
     section { padding:66px 0 0; }
-    h2 { margin:0 0 14px; font-size:clamp(34px,4.4vw,54px); line-height:1; letter-spacing:0; }
+    h2 { margin:0 0 14px; font-family:"Fraunces", Georgia, serif; font-size:clamp(36px,4.4vw,58px); line-height:.98; letter-spacing:-.02em; }
     h3 { margin:0 0 8px; font-size:20px; }
     p, li { font-size:17px; line-height:1.55; color:var(--muted); }
     .section-lead { max-width:760px; font-size:20px; color:#d8e0dc; }
     .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
-    .box { border:1px solid var(--line); background:rgba(255,247,232,.08); border-radius:8px; padding:22px; box-shadow:0 18px 40px rgba(0,0,0,.16); }
+    .box { border:1px solid var(--line); background:rgba(255,247,232,.08); border-radius:20px; padding:22px; box-shadow:0 18px 40px rgba(0,0,0,.16); }
     .box strong { display:block; margin-bottom:8px; color:var(--ink); font-size:18px; }
-    .proof-band { display:grid; grid-template-columns:.9fr 1.1fr; gap:18px; align-items:stretch; margin-top:40px; }
-    .proof-panel { border-radius:8px; border:1px solid rgba(240,184,79,.38); padding:30px; background:#f6efe2; color:#141b1f; }
+    .proof-band { display:grid; grid-template-columns:.95fr 1.05fr; gap:18px; align-items:stretch; margin-top:40px; }
+    .proof-panel { border-radius:24px; border:1px solid rgba(240,184,79,.38); padding:30px; background:#f6efe2; color:#141b1f; }
     .proof-panel p { color:#405056; }
     .metric { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:24px; }
-    .metric div { padding:14px; border-radius:8px; background:#172126; color:#d8e0dc; }
+    .metric div { padding:14px; border-radius:18px; background:#172126; color:#d8e0dc; }
     .metric b { display:block; font-size:28px; color:var(--gold); }
+    .split-list { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px; }
+    .fit-card { border-radius:20px; padding:24px; border:1px solid var(--line); background:rgba(255,247,232,.08); }
+    .fit-card ul { margin:14px 0 0; padding-left:18px; }
+    .fit-card li { margin:0 0 10px; }
     .offer {
-      border:1px solid rgba(246,239,226,.22); border-radius:8px; background:linear-gradient(135deg, rgba(255,247,232,.13), rgba(52,198,179,.08));
+      border:1px solid rgba(246,239,226,.22); border-radius:24px; background:linear-gradient(135deg, rgba(255,247,232,.13), rgba(52,198,179,.08));
       display:grid; grid-template-columns:1fr 350px; gap:24px; padding:30px; box-shadow:var(--shadow);
     }
     .price { font-size:64px; line-height:1; font-weight:950; margin:0 0 8px; color:var(--gold); }
-    .checkout { border-radius:8px; background:#f6efe2; color:#172126; padding:24px; border:1px solid rgba(255,255,255,.34); }
+    .checkout { border-radius:20px; background:#f6efe2; color:#172126; padding:24px; border:1px solid rgba(255,255,255,.34); }
     .checkout p { color:#3e4a4f; }
     .checkout .cta { width:100%; margin-top:12px; color:#1b1110; }
+    .checklist { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin-top:18px; }
+    .checkitem { border-radius:16px; border:1px solid rgba(246,239,226,.14); background:rgba(255,247,232,.06); padding:14px 16px; }
+    .checkitem strong { display:block; color:#fff7e8; margin-bottom:4px; }
     .mini,.fine { font-size:14px; }
     footer { margin-top:54px; padding-top:24px; border-top:1px solid var(--line); }
     @media (max-width:980px) {
-      .hero,.grid,.proof-band,.offer { grid-template-columns:1fr; }
+      .hero,.grid,.proof-band,.offer,.presence-grid,.split-list,.checklist,.microproof { grid-template-columns:1fr; }
       .hero { min-height:auto; }
-      .stage { min-height:590px; }
-      .presence-map { left:0; right:auto; width:100%; }
+      .stage { min-height:auto; }
+      .presence-map { min-height:auto; }
       nav { align-items:flex-start; flex-direction:column; }
+      .navlinks { flex-wrap:wrap; }
       .navnote { text-align:left; }
     }
     @media (max-width:560px) {
       .shell { width:min(100% - 24px, 1180px); padding-top:12px; }
-      .brand img { width:168px; }
-      h1 { font-size:48px; }
+      .brand { width:100%; align-items:flex-start; }
+      .brand img { width:204px; }
+      .brand-copy { display:none; }
+      h1 { font-size:50px; }
       .lead { font-size:18px; }
       .actions .cta { width:100%; }
-      .stage { min-height:520px; }
-      .missing-card { width:70%; left:6px; top:22px; }
-      .found-card { width:84%; right:0; top:142px; }
-      .site-hero strong { font-size:25px; }
+      .navlinks a:not(.cta) { display:none; }
+      .presence-map { padding:18px; }
+      .site-hero strong { font-size:28px; }
       .site-grid { grid-template-columns:1fr; }
-      .phone-card { width:45%; min-height:220px; }
-      .stamp { left:8px; bottom:24px; width:50%; font-size:14px; }
+      .phone-card { min-height:auto; }
+      .stamp { position:static; max-width:none; margin-top:16px; }
       .metric { grid-template-columns:1fr; }
       .offer { padding:20px; }
     }
@@ -152,75 +178,102 @@
 <body>
   <main class="shell">
     <nav>
-      <a class="brand" href="/" aria-label="Findable Web Design home"><img src="/assets/findable-logo-v1.svg" alt="Findable Web Design"></a>
-      <div class="navnote">3822 Longmont LLC</div>
+      <a class="brand" href="/" aria-label="Findable Web Design home">
+        <img src="/assets/findable-logo-v1.svg" alt="Findable Web Design">
+        <span class="brand-copy"><strong>Launch-ready local sites</strong><span>Built for real businesses people already search for.</span></span>
+      </a>
+      <div class="navlinks">
+        <a href="#why">Why it works</a>
+        <a href="#ai-ready">AI-ready</a>
+        <a href="#offer">What you get</a>
+        <a href="#fit">Good fit</a>
+        <span class="navnote">3822 Longmont LLC</span>
+      </div>
     </nav>
     <header class="hero">
-      <div>
-        <p class="eyebrow">For businesses customers already search for</p>
-        <h1>Own the page they land on.</h1>
-        <p class="lead">Findable turns a scattered online presence into one credible customer front door: services, phone, location, and the next step in a page the business controls.</p>
+      <div class="hero-copy">
+        <p class="eyebrow">Website launches for searched local businesses</p>
+        <h1>When they search your name, send them somewhere worth landing.</h1>
+        <p class="lead">Findable builds launch-ready websites for local businesses that already get searched but still rely on a Google listing, old social pages, or nothing solid at all. The result is one controlled page with services, trust signals, and one obvious next step.</p>
+        <div class="microproof">
+          <div><b>Preview first</b><span>We start with a working concept before launch decisions.</span></div>
+          <div><b>Built for mobile</b><span>Calls, directions, services, and contact details come first.</span></div>
+          <div><b>Simple offer</b><span>One practical launch package instead of a vague agency menu.</span></div>
+        </div>
         <div class="actions">
           <a class="cta" href="https://buy.stripe.com/eVqaEYgpf30rfzscFDgnK00">Claim The $497 Launch</a>
-          <a class="cta secondary" href="#offer">See What You Get</a>
+          <a class="cta secondary" href="#why">See Why It Works</a>
         </div>
         <div class="launch-line">
           <span class="pill">$497 base launch</span>
-          <span class="pill">No setup fee</span>
           <span class="pill">Preview before publishing</span>
+          <span class="pill">Domain optional</span>
         </div>
       </div>
-      <div class="stage" aria-label="Before and after web presence preview">
+      <div class="stage" aria-label="Preview of a clearer small-business web presence">
         <div class="presence-map">
-          <div class="missing-card">
-            <div class="search-bar">Search: your business near me</div>
-            <div class="search-line"></div>
-            <div class="search-line short"></div>
-            <div class="warning">A listing is not a front door
-              <span>Customers get fragments: phone, reviews, old posts, and guesses.</span>
+          <div class="presence-grid">
+            <div>
+              <div class="search-card">
+                <div class="search-bar">Search: your business near me</div>
+                <div class="search-body">
+                  <div class="search-line"></div>
+                  <div class="search-line short"></div>
+                  <div class="warning">A listing is not a front door
+                    <span>Customers get fragments: hours, reviews, maybe a phone number, maybe an old link.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="result-card" style="margin-top:18px;">
+                <div class="topbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                <div class="site-hero">
+                  <b>LIVE CUSTOMER FRONT DOOR</b>
+                  <strong>The page customers should actually land on.</strong>
+                  <span>Clean services, proof the business is real, and one clear action instead of scattered scraps.</span>
+                </div>
+                <div class="site-grid">
+                  <div class="tile"><b>Services</b><span></span><span></span></div>
+                  <div class="tile"><b>Trust</b><span></span><span></span></div>
+                  <div class="tile"><b>Directions</b><span></span><span></span></div>
+                  <div class="tile"><b>Call or book</b><span></span><span></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="phone-card">
+              <div class="phone-head">
+                <b>What the customer sees on a phone</b>
+                <span>Not an abstract design exercise. A fast decision page built around what local customers actually check first.</span>
+              </div>
+              <div class="phone-screen">
+                <div class="line" style="width:42%"></div>
+                <div class="line" style="width:78%"></div>
+                <div class="photo"></div>
+                <div class="line" style="width:92%"></div>
+                <div class="line" style="width:66%"></div>
+                <div class="button"></div>
+                <div class="button alt"></div>
+              </div>
             </div>
           </div>
-          <div class="found-card">
-            <div class="topbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-            <div class="site-hero">
-              <b>LIVE CUSTOMER FRONT DOOR</b>
-              <strong>The page customers should land on.</strong>
-            </div>
-            <div class="site-grid">
-              <div class="tile"><span></span><span></span></div>
-              <div class="tile"><span></span><span></span></div>
-              <div class="tile"><span></span><span></span></div>
-            </div>
-          </div>
-          <div class="phone-card">
-            <div class="topbar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-            <div class="phone-screen">
-              <div class="line" style="width:72%"></div>
-              <div class="photo"></div>
-              <div class="line" style="width:88%"></div>
-              <div class="line" style="width:54%"></div>
-              <div class="button"></div>
-            </div>
-          </div>
-          <div class="stamp">From scattered listings to one page customers can act on.</div>
+          <div class="stamp">From scattered listings to one page customers can trust and use.</div>
         </div>
       </div>
     </header>
 
-    <section>
-      <h2>Not a vanity site. A decision page.</h2>
-      <p class="section-lead">The first job is simple: when someone searches the business name, the business should look alive, legitimate, and easy to choose.</p>
+    <section id="why">
+      <h2>Not a vanity site. A better first decision.</h2>
+      <p class="section-lead">The strongest agency sites do one thing well right away: they make the offer obvious. That same rule matters here. When someone searches a local business, the page should prove the business is real, current, and easy to contact within seconds.</p>
       <div class="grid">
-        <div class="box"><strong>Replaces the dead end</strong><p>Give searchers somewhere solid to land instead of a bare listing, old social page, or mystery phone number.</p></div>
-        <div class="box"><strong>Controls the first impression</strong><p>Hours, phone, address, services, photos, and next step sit in one sharp mobile-friendly page.</p></div>
-        <div class="box"><strong>Starts with something real</strong><p>The business sees a working preview first, then confirms the basics instead of starting from a blank page.</p></div>
+        <div class="box"><strong>Replaces the dead end</strong><p>Searchers land on a page the business controls instead of a bare listing, half-filled profile, or outdated social page.</p></div>
+        <div class="box"><strong>Answers the first questions fast</strong><p>Services, phone, map, trust signals, and the next action show up before the customer has to hunt.</p></div>
+        <div class="box"><strong>Starts from a working preview</strong><p>The business reacts to something real first. That cuts friction and makes the offer easier to buy.</p></div>
       </div>
     </section>
 
     <section class="proof-band">
       <div class="proof-panel">
         <h2>“Just Google us” leaks trust.</h2>
-        <p>Google may know the business exists. A controlled website tells customers it is current, organized, and worth choosing.</p>
+        <p>Google can surface a listing. It cannot tell the full story cleanly. A controlled site does that job: it shows the business is current, organized, and worth calling.</p>
         <div class="metric">
           <div><b>$497</b><span>base launch</span></div>
           <div><b>1 page</b><span>customer front door</span></div>
@@ -230,8 +283,52 @@
       <div>
         <div class="grid" style="grid-template-columns:1fr; margin-top:0;">
           <div class="box"><strong>1. Build the front door</strong><p>We shape a working preview around the business name, real contact details, services, and best customer action.</p></div>
-          <div class="box"><strong>2. Clean up the facts</strong><p>The business corrects hours, services, photos, booking preference, and wording before launch.</p></div>
-          <div class="box"><strong>3. Put it where customers land</strong><p>We launch the site and help connect a domain if the business wants one.</p></div>
+          <div class="box"><strong>2. Tighten the facts</strong><p>The business confirms hours, services, photos, wording, and the right call-to-action before anything goes live.</p></div>
+          <div class="box"><strong>3. Launch the page</strong><p>We publish the page and help connect a domain if the business wants a cleaner permanent address.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai-ready">
+      <h2>Built for customers now. Ready for AI next.</h2>
+      <p class="section-lead">The first launch is still a real web page. The next layer is making the business easier for search engines, AI assistants, and booking tools to understand without turning day one into a complicated automation project.</p>
+      <div class="grid">
+        <div class="box"><strong>AI-readable business facts</strong><p>Services, service area, hours, contact details, FAQs, and fit notes are written clearly so people and AI tools can understand what the business does.</p></div>
+        <div class="box"><strong>Request-ready booking path</strong><p>The base site can point customers to a simple request form, phone call, or existing scheduler instead of promising full automatic booking too early.</p></div>
+        <div class="box"><strong>Monthly visibility add-on</strong><p>After launch, Findable can help keep Google Business Profile details, reviews, citations, FAQs, and AI/search visibility notes from drifting stale.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What the launch actually includes.</h2>
+      <p class="section-lead">This is a tight operator offer, not a fuzzy “full digital strategy.” The point is to ship one useful, believable, customer-facing page.</p>
+      <div class="checklist">
+        <div class="checkitem"><strong>One launch-ready homepage</strong><span>Clear services, contact details, and one obvious next step.</span></div>
+        <div class="checkitem"><strong>Mobile-first layout</strong><span>Built around the way local customers browse and call from a phone.</span></div>
+        <div class="checkitem"><strong>Copy cleanup</strong><span>Sharper headlines, service language, and trust framing.</span></div>
+        <div class="checkitem"><strong>Launch support</strong><span>Domain connection help if needed, plus final fact-check before publishing.</span></div>
+      </div>
+    </section>
+
+    <section id="fit">
+      <h2>Good fit. Bad fit.</h2>
+      <p class="section-lead">This works best when the business already exists, already gets searched, and mainly needs a cleaner customer front door.</p>
+      <div class="split-list">
+        <div class="fit-card">
+          <h3>Good fit</h3>
+          <ul>
+            <li>Local businesses with a Google listing but no strong site</li>
+            <li>Owners who want calls, directions, quote requests, or appointment requests</li>
+            <li>Businesses that need one useful page faster than they need a big rebrand</li>
+          </ul>
+        </div>
+        <div class="fit-card">
+          <h3>Not the first offer for</h3>
+          <ul>
+            <li>Complex ecommerce builds</li>
+            <li>Custom software or membership products</li>
+            <li>Large content sites that need multiple funnels on day one</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -239,11 +336,11 @@
     <section class="offer" id="offer">
       <div>
         <h2>The $497 Customer Front Door Launch</h2>
-        <p>The $497 package is for a practical one-page launch. It is built for real local businesses that already have customers but need a controlled web presence, accurate contact information, and one easy path for customers to call, message, or request an appointment.</p>
-        <p>Domain registration is separate and billed at cost if a customer needs a new domain. Custom edits, extra pages, marketing campaigns, or ongoing website care can be quoted separately after the launch request.</p>
+        <p>The $497 package is a practical one-page launch for a real local business that needs a controlled web presence, accurate contact information, and one easy path for customers to call, message, or request an appointment.</p>
+        <p>Domain registration is separate and billed at cost if a customer needs a new domain. AI-ready visibility work, booking/request upgrades, extra pages, heavier custom edits, marketing campaigns, or ongoing website care can be quoted separately after the launch request.</p>
       </div>
       <div class="checkout">
-        <p class="amount">$497</p>
+        <p class="price">$497</p>
         <p><strong>Claim the launch.</strong><br>Pay securely, then we confirm details before launch.</p>
         <a class="cta" href="https://buy.stripe.com/eVqaEYgpf30rfzscFDgnK00">Claim The $497 Launch</a>
         <p class="mini">Secure checkout is handled by Stripe.</p>
