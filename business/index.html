@@ -236,7 +236,14 @@
     footer { margin-top:54px; padding-top:24px; border-top:1px solid var(--line); }
     @media (max-width:760px) {
       .hero,.grid,.proof-band,.offer,.presence-grid,.split-list,.checklist,.microproof { grid-template-columns:1fr; }
-      .hero { min-height:auto; }
+      .hero { display:flex; flex-direction:column; min-height:auto; }
+      .hero-copy { display:contents; }
+      .hero .eyebrow { order:1; }
+      .hero h1 { order:2; }
+      .hero .stage { order:3; }
+      .hero .lead { order:4; }
+      .hero .actions { order:5; }
+      .hero .launch-line { order:6; }
       .stage { min-height:auto; }
       .presence-map { min-height:auto; }
       nav { align-items:flex-start; flex-direction:column; }
@@ -255,7 +262,10 @@
       .presence-map { padding:18px; }
       .site-hero strong { font-size:28px; }
       .site-grid { grid-template-columns:1fr; }
-      .phone-card, .attention-card { min-height:430px; }
+      .phone-card { min-height:430px; }
+      .attention-card { min-height:380px; }
+      .signal-rings { width:286px; height:286px; }
+      .seen-target { width:min(76%,250px); padding:22px; }
       .diamond-field { inset:92px 14px 92px; }
       .stamp { position:static; max-width:none; margin-top:16px; }
       .metric { grid-template-columns:1fr; }
