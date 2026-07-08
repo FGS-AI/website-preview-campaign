@@ -25,7 +25,7 @@
       background:
         linear-gradient(120deg, rgba(240,184,79,.12) 0 1px, transparent 1px 70px),
         linear-gradient(150deg, rgba(52,198,179,.11) 0 1px, transparent 1px 92px),
-        linear-gradient(135deg, #10161a 0%, #172126 46%, #2b1f2b 100%);
+        linear-gradient(135deg, #10161a 0%, #172126 48%, #18362f 100%);
       overflow-x:hidden;
     }
     a { color:var(--teal); font-weight:900; }
@@ -79,7 +79,7 @@
       pointer-events:none;
     }
     .presence-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .95fr; gap:18px; }
-    .visual-card, .search-card, .phone-card, .result-card {
+    .visual-card, .search-card, .phone-card, .result-card, .attention-card {
       border-radius:22px; overflow:hidden; border:1px solid rgba(24,33,38,.12); box-shadow:0 22px 50px rgba(0,0,0,.18);
     }
     .search-card { background:var(--card); color:#1e2529; min-height:220px; }
@@ -94,7 +94,7 @@
     .dot { width:9px; height:9px; border-radius:50%; background:var(--coral); }
     .dot:nth-child(2) { background:var(--gold); }
     .dot:nth-child(3) { background:var(--teal-dark); }
-    .site-hero { margin:18px; padding:24px; border-radius:22px; background:linear-gradient(135deg,#0d6d65,#15343b 58%,#8b4f66); color:white; }
+    .site-hero { margin:18px; padding:24px; border-radius:22px; background:linear-gradient(135deg,#0d6d65,#15343b 58%,#b56a3d); color:white; }
     .site-hero b { display:block; margin-bottom:18px; color:#bdece5; font-size:12px; letter-spacing:1px; }
     .site-hero strong { display:block; max-width:280px; font-family:"Fraunces", Georgia, serif; font-size:34px; line-height:1; }
     .site-hero span { display:block; margin-top:12px; max-width:320px; color:#d9efea; font-size:15px; line-height:1.45; }
@@ -103,6 +103,54 @@
     .tile b { display:block; font-size:13px; color:#263238; margin-bottom:12px; letter-spacing:.04em; text-transform:uppercase; }
     .tile span { display:block; height:8px; border-radius:8px; background:#91aaa4; margin-bottom:9px; }
     .tile span:last-child { width:58%; background:#d28c74; }
+    .attention-card {
+      position:relative; min-height:640px; padding:26px; background:#f6efe2; color:#172126;
+      display:flex; flex-direction:column; justify-content:space-between;
+    }
+    .attention-card:before {
+      content:""; position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(23,33,38,.06) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(23,33,38,.05) 1px, transparent 1px);
+      background-size:34px 34px; pointer-events:none;
+    }
+    .attention-head, .seen-target, .attention-note { position:relative; z-index:2; }
+    .attention-head b { display:block; color:#172126; font-size:16px; letter-spacing:.1em; text-transform:uppercase; }
+    .attention-head span { display:block; max-width:310px; margin-top:8px; color:#516067; font-size:15px; line-height:1.45; }
+    .diamond-field { position:absolute; inset:108px 20px 118px; z-index:1; }
+    .diamond {
+      position:absolute; width:11px; height:11px; background:#11191d; transform:rotate(45deg);
+      opacity:.22; border-radius:2px; animation:diamondPull 5.8s ease-in-out infinite;
+    }
+    .diamond:nth-child(1) { left:9%; top:8%; animation-delay:-.2s; }
+    .diamond:nth-child(2) { left:22%; top:31%; animation-delay:-1.1s; }
+    .diamond:nth-child(3) { left:11%; top:67%; animation-delay:-2.4s; }
+    .diamond:nth-child(4) { left:38%; top:17%; animation-delay:-3.1s; }
+    .diamond:nth-child(5) { left:48%; top:78%; animation-delay:-.8s; }
+    .diamond:nth-child(6) { left:64%; top:12%; animation-delay:-1.8s; }
+    .diamond:nth-child(7) { left:78%; top:36%; animation-delay:-3.8s; }
+    .diamond:nth-child(8) { left:86%; top:72%; animation-delay:-2.9s; }
+    .diamond:nth-child(9) { left:31%; top:54%; animation-delay:-4.6s; }
+    .diamond:nth-child(10) { left:68%; top:56%; animation-delay:-5.1s; }
+    .diamond:nth-child(11) { left:18%; top:82%; animation-delay:-3.6s; }
+    .diamond:nth-child(12) { left:91%; top:18%; animation-delay:-.5s; }
+    @keyframes diamondPull {
+      0%, 100% { transform:translate(0,0) rotate(45deg) scale(.88); opacity:.18; }
+      45% { opacity:.34; }
+      62% { transform:translate(var(--pull-x, 0), var(--pull-y, 0)) rotate(45deg) scale(1.12); opacity:.72; }
+    }
+    .diamond:nth-child(1), .diamond:nth-child(2), .diamond:nth-child(3), .diamond:nth-child(4) { --pull-x:90px; --pull-y:118px; }
+    .diamond:nth-child(5), .diamond:nth-child(9), .diamond:nth-child(11) { --pull-x:50px; --pull-y:-62px; }
+    .diamond:nth-child(6), .diamond:nth-child(7), .diamond:nth-child(8), .diamond:nth-child(10), .diamond:nth-child(12) { --pull-x:-82px; --pull-y:82px; }
+    .seen-target {
+      position:absolute; left:50%; top:50%; width:min(78%,340px); transform:translate(-50%,-50%);
+      border-radius:24px; padding:28px; background:#10161a; color:#fff7e8;
+      box-shadow:0 26px 60px rgba(16,22,26,.28); border:1px solid rgba(255,247,232,.12); text-align:center;
+    }
+    .seen-target small { display:block; color:#f0b84f; font-size:12px; font-weight:950; letter-spacing:.16em; text-transform:uppercase; margin-bottom:10px; }
+    .seen-target strong { display:block; font-family:"Fraunces", Georgia, serif; font-size:clamp(44px,5vw,70px); line-height:.9; letter-spacing:-.03em; }
+    .seen-target span { display:block; margin-top:12px; color:#c7d5d0; font-size:15px; line-height:1.45; }
+    .attention-note { border-radius:18px; background:#fffaf0; padding:16px; color:#344148; font-size:14px; line-height:1.45; }
     .phone-card { background:#10161a; color:#fff; min-height:640px; display:flex; flex-direction:column; }
     .phone-screen { padding:18px; }
     .phone-head { padding:20px 22px 6px; }
@@ -168,7 +216,8 @@
       .presence-map { padding:18px; }
       .site-hero strong { font-size:28px; }
       .site-grid { grid-template-columns:1fr; }
-      .phone-card { min-height:auto; }
+      .phone-card, .attention-card { min-height:430px; }
+      .diamond-field { inset:92px 14px 92px; }
       .stamp { position:static; max-width:none; margin-top:16px; }
       .metric { grid-template-columns:1fr; }
       .offer { padding:20px; }
@@ -239,23 +288,25 @@
                 </div>
               </div>
             </div>
-            <div class="phone-card">
-              <div class="phone-head">
-                <b>What the customer sees on a phone</b>
-                <span>Not an abstract design exercise. A fast decision page built around what local customers actually check first.</span>
+            <div class="attention-card" aria-label="Animation showing scattered customer attention becoming visible">
+              <div class="attention-head">
+                <b>Scattered attention</b>
+                <span>Searches, referrals, calls, and reviews are floating around. Without a real page, customers have nowhere clear to land.</span>
               </div>
-              <div class="phone-screen">
-                <div class="line" style="width:42%"></div>
-                <div class="line" style="width:78%"></div>
-                <div class="photo"></div>
-                <div class="line" style="width:92%"></div>
-                <div class="line" style="width:66%"></div>
-                <div class="button"></div>
-                <div class="button alt"></div>
+              <div class="diamond-field" aria-hidden="true">
+                <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
+                <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
+                <span class="diamond"></span><span class="diamond"></span><span class="diamond"></span><span class="diamond"></span>
               </div>
+              <div class="seen-target">
+                <small>Findable goal</small>
+                <strong>Be Seen.</strong>
+                <span>One controlled page gives customers and search tools a clear place to understand and choose the business.</span>
+              </div>
+              <div class="attention-note">The motion is simple on purpose: not a tech show-off, just a visual way to show invisible businesses becoming easier to find.</div>
             </div>
           </div>
-          <div class="stamp">From scattered listings to one page customers can trust and use.</div>
+          <div class="stamp">From scattered attention to one page customers can trust and use.</div>
         </div>
       </div>
     </header>
