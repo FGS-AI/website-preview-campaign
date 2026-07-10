@@ -155,7 +155,7 @@
       border-radius:50%; border:1px solid rgba(255,210,57,.22); box-shadow:0 0 0 22px rgba(255,210,57,.06), inset 0 0 0 18px rgba(255,210,57,.04);
       animation:lensPulse 3.8s ease-in-out infinite; z-index:1;
     }
-    .attention-head, .seen-target, .signal-strip { position:relative; z-index:3; }
+    .attention-head, .seen-target { position:relative; z-index:3; }
     .attention-head b { display:block; color:var(--gold); font-size:13px; letter-spacing:.22em; text-transform:uppercase; }
     .attention-head span { display:block; max-width:300px; margin-top:8px; color:#b8b0a2; font-size:15px; line-height:1.45; }
     .diamond-field { position:absolute; inset:92px 18px 104px; z-index:2; }
@@ -222,8 +222,6 @@
     .seen-target small { display:block; color:#ffd239; font-size:12px; font-weight:950; letter-spacing:.32em; text-transform:uppercase; margin-bottom:18px; }
     .seen-target strong { display:block; font-family:"Fraunces", Georgia, serif; font-size:clamp(58px,7.2vw,110px); line-height:.82; letter-spacing:0; }
     .seen-target span { display:block; margin-top:12px; color:#c7d5d0; font-size:15px; line-height:1.45; }
-    .signal-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-    .signal-strip span { min-height:42px; display:flex; align-items:center; justify-content:center; border-radius:999px; background:rgba(248,243,233,.08); color:#f8f3e9; border:1px solid rgba(248,243,233,.10); font-size:12px; font-weight:950; letter-spacing:.08em; text-transform:uppercase; }
     .phone-card { background:#10161a; color:#fff; min-height:640px; display:flex; flex-direction:column; }
     .phone-screen { padding:18px; }
     .phone-head { padding:20px 22px 6px; }
@@ -334,11 +332,6 @@
       <div class="hero-copy">
         <h1>People are looking. Can they call you?</h1>
         <p class="lead">Your regulars know you. New customers may only see an old listing and wonder if you are still in business.</p>
-        <div class="microproof">
-          <div><b>Seen</b><span>A real page with your name and location.</span></div>
-          <div><b>Clear</b><span>What you do, shown simply.</span></div>
-          <div><b>Callable</b><span>Phone-first, because that is how you work.</span></div>
-        </div>
         <div class="actions">
           <a class="cta" href="#preview">Show Me My Preview</a>
         </div>
@@ -368,7 +361,6 @@
                 <strong>Be<br>Seen.</strong>
                 <span>Show you are open. Say what you do. Make calling easy.</span>
                 </div>
-                <div class="signal-strip"><span>Seen</span><span>Clear</span><span>Call</span></div>
               </div>
             </div>
           </div>
