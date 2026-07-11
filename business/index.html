@@ -386,7 +386,11 @@
       <div class="checkout">
         <p class="price">Free</p>
         <p><strong>Takes about 30 seconds.</strong><br>Preview usually takes us 20-40 minutes.</p>
-        <form class="quick-request" action="mailto:preview@findablewebdesign.com" method="post" enctype="text/plain">
+        <form class="quick-request" action="https://formsubmit.co/preview@findablewebdesign.com" method="POST">
+          <input type="hidden" name="_next" value="https://findablewebdesign.com/thanks.html">
+          <input type="hidden" name="_subject" value="Findable free preview request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
           <label>Business name<input name="business_name" autocomplete="organization" required></label>
           <label>City<input name="city" autocomplete="address-level2" required></label>
           <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
