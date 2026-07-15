@@ -386,11 +386,7 @@
       <div class="checkout">
         <p class="price">Free</p>
         <p><strong>Answer a few questions.</strong><br>We send back a free preview page.</p>
-        <form class="quick-request" action="https://formsubmit.co/preview@findablewebdesign.com" method="POST">
-          <input type="hidden" name="_next" value="https://findablewebdesign.com/thanks.html">
-          <input type="hidden" name="_subject" value="Findable free preview request">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
+        <form class="quick-request" action="/api/preview-request" method="POST">
           <label>Business name<input name="business_name" autocomplete="organization" required></label>
           <label>City<input name="city" autocomplete="address-level2" required></label>
           <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
