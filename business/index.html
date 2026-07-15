@@ -270,6 +270,8 @@
       background:#fffaf0; color:#172126; font:inherit;
     }
     .quick-request textarea { min-height:84px; resize:vertical; }
+    .quick-request input[type="file"] { min-height:58px; padding:10px; cursor:pointer; }
+    .quick-request .optional { display:block; margin-top:4px; color:#687378; font-size:13px; font-weight:700; }
     .quick-request button {
       min-height:60px; border:0; border-radius:16px; background:#172126; color:#fff7e8;
       font:inherit; font-size:18px; font-weight:950; cursor:pointer;
@@ -381,16 +383,17 @@
     <section class="offer" id="preview">
       <div>
         <h2>Get a free preview.</h2>
-        <p>Answer four quick questions. We send back a sample page built to make your business easier to trust and contact.</p>
+        <p>Answer four quick questions. Add your logo if you have one. We build the sample immediately.</p>
       </div>
       <div class="checkout">
         <p class="price">Free</p>
         <p><strong>Answer a few questions.</strong><br>We send back a free preview page.</p>
-        <form class="quick-request" action="/api/preview-request" method="POST">
+        <form class="quick-request" action="/api/preview-request" method="POST" enctype="multipart/form-data">
           <label>Business name<input name="business_name" autocomplete="organization" required></label>
           <label>City<input name="city" autocomplete="address-level2" required></label>
           <label>Phone<input name="phone" type="tel" autocomplete="tel" required></label>
           <label>What do you do?<textarea name="request" placeholder="Nail salon, roofer, barber, contractor..." required></textarea></label>
+          <label>Business logo <span class="optional">Optional. JPG, PNG, or WebP under 2 MB.</span><input name="logo_file" type="file" accept="image/png,image/jpeg,image/webp"></label>
           <button type="submit">See My Free Preview</button>
         </form>
       </div>
